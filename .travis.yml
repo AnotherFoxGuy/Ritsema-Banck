@@ -1,0 +1,12 @@
+dist: bionic
+language: bash
+services:
+  - docker
+
+script:
+  - cd frontend
+  - docker build .
+  - cd ../backend
+  - docker build .
+
+  

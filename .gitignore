@@ -1,2 +1,8 @@
 
 .idea/
+
+packer_cache/
+
+mattermost.tar.xz
+
+output-virtualbox-iso/
