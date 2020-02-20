@@ -1,12 +1,24 @@
 dist: bionic
-language: bash
-services:
-  - docker
 
-script:
-  - cd frontend
-  - docker build .
-  - cd ../backend
-  - docker build .
-
-  
+jobs:
+  include:
+    - language: php
+      php: 7.4
+      cache:
+        directories:
+          - $HOME/.composer/cache/files
+      name: Backend build
+      install:
+        - cd backend
+        - composer install
+      script:
+        - php vendor/bin/codecept run --steps
+    - language: node_js
+      cache: yarn
+      node_js: lts/*
+      name: Frontend build
+      install:
+        - cd frontend
+        - yarn install
+      script:
+        - yarn build
