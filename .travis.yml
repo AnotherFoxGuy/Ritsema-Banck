@@ -12,6 +12,8 @@ jobs:
         - cd backend
         - composer install
       script:
+        - sh run-php-server.sh
+        - sleep 2
         - php vendor/bin/codecept run --coverage --coverage-xml --steps
       after_success:
         - bash <(curl -s https://codecov.io/bash)
