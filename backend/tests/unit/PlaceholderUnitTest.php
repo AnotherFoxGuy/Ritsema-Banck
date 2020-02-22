@@ -11,6 +11,6 @@ class PlaceholderUnitTest extends \Codeception\Test\Unit
     // tests
     public function testSomeFeature()
     {
-        $this->assertEquals(3, calc::add(1 ,2));
+        $this->assertEquals(3, calc::add(1, 2));
     }
 }
