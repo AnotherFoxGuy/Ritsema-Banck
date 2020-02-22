@@ -1,7 +1,17 @@
 {
-    "require-dev": {
-        "codeception/codeception": "^4.1",
-        "codeception/module-phpbrowser": "^1.0.0",
-        "codeception/module-asserts": "^1.0.0"
-    }
+  "autoload": {
+    "psr-4": {
+      "RitsemaBanck\\": "src/"
+    },
+    "files": [
+      "c3.php"
+    ]
+  },
+  "require-dev": {
+    "codeception/codeception": "^4.1",
+    "codeception/c3": "^2.4",
+    "codeception/module-phpbrowser": "^1.0.0",
+    "codeception/module-asserts": "^1.0.0",
+    "codeception/module-rest": "^1.2"
+  }
 }

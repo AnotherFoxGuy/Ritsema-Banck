@@ -1,13 +1,14 @@
 <?php
+require __DIR__ . '/../vendor/autoload.php';
+
+use RitsemaBanck\APIHelper;
+use RitsemaBanck\calc;
+
+$x = APIHelper::GetData("x");
+$y = APIHelper::GetData("y");
 
 $answer = array(
-    'result' => true,
-    'message' => 'Server sucessfully registered',
-    'challenge' => 'dsdsds',
-    'verified-level' => 'sddsdsafs'
+    'result' => calc::add($x, $y),
 );
 
-header('content-type: application/json; charset: utf-8');
-http_response_code(200);
-
-echo json_encode($answer);
+APIHelper::ReturnData($answer);
