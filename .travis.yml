@@ -4,7 +4,6 @@ php: 7.4
 cache:
   directories:
     - $HOME/.composer/cache/files
-name: Backend build
 install:
   - composer install
 script:
