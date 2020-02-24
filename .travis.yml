@@ -1,28 +1,14 @@
 dist: bionic
-
-jobs:
-  include:
-    - language: php
-      php: 7.4
-      cache:
-        directories:
-          - $HOME/.composer/cache/files
-      name: Backend build
-      install:
-        - cd backend
-        - composer install
-      script:
-        - sh run-php-server.sh
-        - sleep 2
-        - php vendor/bin/codecept run --coverage --coverage-xml --steps
-      after_success:
-        - bash <(curl -s https://codecov.io/bash)
-    - language: node_js
-      cache: yarn
-      node_js: lts/*
-      name: Frontend build
-      install:
-        - cd frontend
-        - yarn install
-      script:
-        - yarn build
+language: php
+php: 7.4
+cache:
+  directories:
+    - $HOME/.composer/cache/files
+install:
+  - composer install
+script:
+  - sh run-php-server.sh
+  - sleep 2
+  - php vendor/bin/codecept run --coverage --coverage-xml --steps
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
