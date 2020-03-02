@@ -47,19 +47,13 @@
     {
       "type": "shell",
       "inline": [
-        "echo 'packer' | sudo -S mkdir -p /var/www/html/backend/",
         "echo 'packer' | sudo -S chown -R packer: /var/www/html/"
       ]
     },
     {
       "type": "file",
-      "source": "frontend/dist/",
+      "source": "./src/",
       "destination": " /var/www/html"
-    },
-    {
-      "type": "file",
-      "source": "backend/src/",
-      "destination": " /var/www/html/backend"
     }
   ]
 }
