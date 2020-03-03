@@ -1,4 +1,7 @@
 <?php
+
+require __DIR__ . '/../../src/lib/calc.php';
+
 use RitsemaBanck\calc;
 
 class PlaceholderUnitTest extends \Codeception\Test\Unit
