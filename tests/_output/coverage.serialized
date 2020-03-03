@@ -1,70 +1,70 @@
 <?php
 $coverage = new SebastianBergmann\CodeCoverage\CodeCoverage;
 $coverage->setData(array (
-  '/home/anotherfoxguy/Documents/Github/Ritsema-Banck/src/index.php' => 
+  '/home/anotherfoxguy/Documents/Github/Ritsema-Banck/src/index.php' =>
   array (
-    7 => 
+    7 =>
     array (
       0 => 'testIndex',
       1 => 'testErrorIndex',
     ),
-    8 => 
+    8 =>
     array (
       0 => 'testIndex',
     ),
-    11 => 
+    11 =>
     array (
       0 => 'testIndex',
     ),
-    14 => 
+    14 =>
     array (
       0 => 'testIndex',
     ),
   ),
-  '/home/anotherfoxguy/Documents/Github/Ritsema-Banck/src/APIHelper.php' => 
+  '/home/anotherfoxguy/Documents/Github/Ritsema-Banck/src/APIHelper.php' =>
   array (
-    10 => 
+    10 =>
     array (
       0 => 'testIndex',
       1 => 'testErrorIndex',
     ),
-    11 => 
+    11 =>
     array (
       0 => 'testErrorIndex',
     ),
-    12 => 
+    12 =>
     array (
       0 => 'testErrorIndex',
     ),
-    13 => 
+    13 =>
     array (
       0 => 'testErrorIndex',
     ),
-    15 => 
+    15 =>
     array (
       0 => 'testIndex',
     ),
     17 => NULL,
-    21 => 
+    21 =>
     array (
       0 => 'testIndex',
     ),
-    22 => 
+    22 =>
     array (
       0 => 'testIndex',
     ),
-    24 => 
+    24 =>
     array (
       0 => 'testIndex',
     ),
-    25 => 
+    25 =>
     array (
       0 => 'testIndex',
     ),
   ),
-  '/home/anotherfoxguy/Documents/Github/Ritsema-Banck/src/calc.php' => 
+  '/home/anotherfoxguy/Documents/Github/Ritsema-Banck/src/calc.php' =>
   array (
-    9 => 
+    9 =>
     array (
       0 => 'testIndex',
       1 => 'PlaceholderUnitTest::testSomeFeature',
@@ -73,17 +73,17 @@ $coverage->setData(array (
   ),
 ));
 $coverage->setTests(array (
-  'testIndex' => 
+  'testIndex' =>
   array (
     'size' => 'unknown',
     'status' => -1,
   ),
-  'testErrorIndex' => 
+  'testErrorIndex' =>
   array (
     'size' => 'unknown',
     'status' => -1,
   ),
-  'PlaceholderUnitTest::testSomeFeature' => 
+  'PlaceholderUnitTest::testSomeFeature' =>
   array (
     'size' => 'unknown',
     'status' => 0,
