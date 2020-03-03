@@ -18,9 +18,10 @@ services:
   #      - "8181:80"
 
   webserver:
-    image: php:apache
-    working_dir: /var/www/html/
-    volumes:
-      - ./src:/var/www/html/
-    ports:
-      - "8080:80"
+      image: php:apache
+      working_dir: /var/www/html/
+      volumes:
+        - ./src:/var/www/html/
+        - .:/var/www/
+      ports:
+        - "8080:80"

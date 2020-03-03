@@ -1,7 +1,7 @@
 {
   "autoload": {
     "psr-4": {
-      "RitsemaBanck\\": "src/"
+      "RitsemaBanck\\": "src/lib"
     },
     "files": [
       "c3.php"
