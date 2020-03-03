@@ -1,5 +1,6 @@
 <?php
-require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/lib/APIHelper.php';
+require __DIR__ . '/lib/calc.php';
 
 use RitsemaBanck\APIHelper;
 use RitsemaBanck\calc;
