@@ -1,21 +1,38 @@
 version: "3.1"
 services:
-  #  mysql:
-  #    image: mysql:latest
-  #    environment:
-  #      - MYSQL_ROOT_PASSWORD=test
-  #      - MYSQL_DATABASE=test
-  #      - MYSQL_USER=test
-  #      - MYSQL_PASSWORD=test
-  #    ports:
-  #      - "3306:3306"
+  mysql:
+    image: mysql:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=test
+      - MYSQL_DATABASE=test
+      - MYSQL_USER=test
+      - MYSQL_PASSWORD=test
+    ports:
+      - "3306:3306"
 
-  #  phpmyadmin:
-  #    image: phpmyadmin/phpmyadmin
-  #    environment:
-  #      - PMA_ARBITRARY=1
-  #    ports:
-  #      - "8181:80"
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      - PMA_HOST=mysql
+    ports:
+      - "8181:80"
+
+  openldap:
+    image: osixia/openldap
+    environment:
+      - LDAP_ORGANISATION=dev
+      - LDAP_DOMAIN=dev.local
+      - LDAP_BASE_DN=dc=dev,dc=local
+    ports:
+      - "389:389"
+      - "636:636"
+
+  phpldapadmin:
+    image: osixia/phpldapadmin
+    environment:
+      - PHPLDAPADMIN_LDAP_HOSTS=openldap
+    ports:
+      - "8182:443"
 
   webserver:
     image: php:apache
