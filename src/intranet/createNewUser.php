@@ -139,7 +139,6 @@ if ($addResult === true) {
             foreach ($valuesNamed as $key => $value) {
                 echo "{$key} = $value \n";
             }//for each value
-
         }// if exactly one item found (this must be!)
     } else {
         throw new Exception("UpdateLDAPContactFromGoogleContact::Cannot perform query for this user $contactDN");
