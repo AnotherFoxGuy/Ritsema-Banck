@@ -6,7 +6,7 @@
 <body>
     <P> Intranet :: It works! </p>
     <P>Login gegevens:</P>
-    <?
+    <?php
       echo "<P>Gebruiker '" . $_SERVER["AUTHENTICATE_UID"] . "' ingelogd met wachtwoord '" . $_SERVER['PHP_AUTH_PW'] . "'</P>";
     ?>
     <form action="createNewUser.php" method="post">
