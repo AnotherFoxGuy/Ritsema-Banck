@@ -7,6 +7,11 @@
       "c3.php"
     ]
   },
+  "require": {
+    "directorytree/ldaprecord": "^1.2",
+    "ext-ldap": "*",
+    "ext-json": "*"
+  },
   "require-dev": {
     "codeception/codeception": "^4.1",
     "codeception/c3": "^2.4",
