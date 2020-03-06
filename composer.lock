@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "directorytree/ldaprecord",
-            "version": "v1.2.4",
+            "version": "v1.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/DirectoryTree/LdapRecord.git",
-                "reference": "a28ae725ce14e804c6a3f1dd090cc4f7395a08af"
+                "reference": "4728354c7da72be445dbd985451ba9dbdeda2d53"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/DirectoryTree/LdapRecord/zipball/a28ae725ce14e804c6a3f1dd090cc4f7395a08af",
-                "reference": "a28ae725ce14e804c6a3f1dd090cc4f7395a08af",
+                "url": "https://api.github.com/repos/DirectoryTree/LdapRecord/zipball/4728354c7da72be445dbd985451ba9dbdeda2d53",
+                "reference": "4728354c7da72be445dbd985451ba9dbdeda2d53",
                 "shasum": ""
             },
             "require": {
@@ -64,7 +64,7 @@
                 "orm",
                 "windows"
             ],
-            "time": "2020-03-03T15:22:53+00:00"
+            "time": "2020-03-05T00:57:49+00:00"
         },
         {
             "name": "illuminate/contracts",
