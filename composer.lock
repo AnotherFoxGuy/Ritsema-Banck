@@ -68,16 +68,16 @@
         },
         {
             "name": "illuminate/contracts",
-            "version": "v7.0.4",
+            "version": "v7.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
-                "reference": "4e885c85fba40946f75167a2b2ac7902aeb2f2d7"
+                "reference": "d806109dfee7b44b3633d0562aa4575c1365e0b1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/contracts/zipball/4e885c85fba40946f75167a2b2ac7902aeb2f2d7",
-                "reference": "4e885c85fba40946f75167a2b2ac7902aeb2f2d7",
+                "url": "https://api.github.com/repos/illuminate/contracts/zipball/d806109dfee7b44b3633d0562aa4575c1365e0b1",
+                "reference": "d806109dfee7b44b3633d0562aa4575c1365e0b1",
                 "shasum": ""
             },
             "require": {
@@ -108,7 +108,7 @@
             ],
             "description": "The Illuminate Contracts package.",
             "homepage": "https://laravel.com",
-            "time": "2020-02-28T16:28:59+00:00"
+            "time": "2020-03-06T01:34:22+00:00"
         },
         {
             "name": "nesbot/carbon",
