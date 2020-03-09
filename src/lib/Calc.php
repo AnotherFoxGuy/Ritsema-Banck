@@ -1,5 +1,4 @@
 <?php
-
 namespace RitsemaBanck;
 
 class calc

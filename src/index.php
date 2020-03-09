@@ -1,9 +1,8 @@
 <?php
-
 require __DIR__ . '/../vendor/autoload.php';
 
 use RitsemaBanck\APIHelper;
-use RitsemaBanck\calc;
+use RitsemaBanck\Calc;
 
 $x = APIHelper::GetData("x");
 $y = APIHelper::GetData("y");
