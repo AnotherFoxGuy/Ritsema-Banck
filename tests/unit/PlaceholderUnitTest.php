@@ -1,8 +1,8 @@
 <?php
 
-require __DIR__ . '/../../src/lib/calc.php';
+require __DIR__ . '../../vendor/autoload.php';
 
-use RitsemaBanck\calc;
+use RitsemaBanck\Calc;
 
 class PlaceholderUnitTest extends \Codeception\Test\Unit
 {
