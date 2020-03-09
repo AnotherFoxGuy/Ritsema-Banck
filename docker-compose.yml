@@ -3,10 +3,12 @@ services:
   mysql:
     image: mysql:latest
     environment:
-      - MYSQL_ROOT_PASSWORD=test
-      - MYSQL_DATABASE=test
-      - MYSQL_USER=test
-      - MYSQL_PASSWORD=test
+      - MYSQL_ROOT_PASSWORD=admin
+      - MYSQL_DATABASE=ritsema-banck
+      - MYSQL_USER=admin
+      - MYSQL_PASSWORD=admin
+    volumes:
+      - ./tmp/mysql:/var/lib/mysql
     ports:
       - "3306:3306"
 
@@ -20,9 +22,12 @@ services:
   openldap:
     image: osixia/openldap
     environment:
-      - LDAP_ORGANISATION=dev
-      - LDAP_DOMAIN=dev.local
-      - LDAP_BASE_DN=dc=dev,dc=local
+      - LDAP_ORGANISATION=ritsema-banck
+      - LDAP_DOMAIN=ritsema-banck.frl
+      - LDAP_BASE_DN=dc=ritsema-banck,dc=frl
+    volumes:
+      - "./tmp/openldap:/var/lib/ldap"
+      - "./tmp/openldap-config:/etc/ldap/slapd.d"
     ports:
       - "389:389"
       - "636:636"
@@ -35,10 +40,9 @@ services:
       - "8182:443"
 
   webserver:
-    image: php:apache
+    build: ./dev/
     working_dir: /var/www/html/
     volumes:
-      - ./src:/var/www/html/
       - .:/var/www/
     ports:
       - "8080:80"

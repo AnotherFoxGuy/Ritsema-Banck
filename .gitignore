@@ -1,7 +1,8 @@
 vendor/
-
 .idea/
-
 c3.php
-
 tests/_output/
+output-virtualbox-iso/
+packer_cache/
+tmp/
+html/

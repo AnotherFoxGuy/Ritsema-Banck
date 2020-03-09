@@ -47,8 +47,9 @@
     {
       "type": "shell",
       "inline": [
-        "echo 'packer' | sudo -S bash <(curl -Ss https://my-netdata.io/kickstart.sh)",
-        "echo 'packer' | sudo -S chown -R packer: /var/www/html/"
+        "echo 'packer' | sudo -S chown -R packer: /var/www/html/",
+        "echo 'packer' | sudo -S rm -vf /var/www/html/index.html",
+        "echo 'packer' | sudo -S a2enmod ldap authnz_ldap"
       ]
     },
     {
