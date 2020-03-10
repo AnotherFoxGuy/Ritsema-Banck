@@ -1,13 +1,15 @@
 dist: bionic
 language: php
 php: 7.4
+services:
+  - docker
 cache:
   directories:
     - $HOME/.composer/cache/files
 install:
   - composer install
 script:
-  - sh run-php-server.sh
+  - docker-compose up -d webserver
   - sleep 2
   - php vendor/bin/codecept run --coverage --coverage-xml --steps
 after_success:

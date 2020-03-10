@@ -49,7 +49,10 @@
       "inline": [
         "echo 'packer' | sudo -S chown -R packer: /var/www/html/",
         "echo 'packer' | sudo -S rm -vf /var/www/html/index.html",
-        "echo 'packer' | sudo -S a2enmod ldap authnz_ldap"
+        "echo 'packer' | sudo -S a2enmod ldap authnz_ldap",
+        "wget http://prdownloads.sourceforge.net/webadmin/webmin_1.941_all.deb",
+        "echo 'packer' | sudo -S dpkg -i webmin_1.941_all.deb",
+        "echo 'packer' | sudo -S apt-get install -f"
       ]
     },
     {
