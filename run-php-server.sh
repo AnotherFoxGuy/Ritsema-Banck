@@ -1,1 +1,1 @@
-php -S localhost:8181 -t "./src" &
+/home/travis/.phpenv/shims/php -S localhost:80 -t "./src" &
