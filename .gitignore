@@ -6,3 +6,4 @@ output-virtualbox-iso/
 packer_cache/
 tmp/
 html/
+composer.phar

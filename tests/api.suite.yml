@@ -2,6 +2,6 @@ actor: ApiTester
 modules:
   enabled:
     - REST:
-        url: http://localhost:8181
+        url: http://localhost
         depends: PhpBrowser
         part: Json
