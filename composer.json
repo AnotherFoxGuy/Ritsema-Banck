@@ -8,9 +8,7 @@
     ]
   },
   "require": {
-    "directorytree/ldaprecord": "^1.2",
-    "ext-ldap": "*",
-    "ext-json": "*"
+    "directorytree/ldaprecord": "^1.2"
   },
   "require-dev": {
     "codeception/codeception": "^4.1",
