@@ -5,7 +5,7 @@ services:
     image: mariadb:latest
     environment:
       - MYSQL_ROOT_PASSWORD=admin
-      - MYSQL_DATABASE=ritsema-banck
+      - MYSQL_DATABASE=ritsema_banck
       - MYSQL_USER=admin
       - MYSQL_PASSWORD=admin
     volumes:
