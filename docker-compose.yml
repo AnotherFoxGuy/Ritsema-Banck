@@ -24,10 +24,12 @@ services:
   openldap:
     container_name: RB_openldap
     image: osixia/openldap
+    hostname: openldap
     environment:
       - LDAP_ORGANISATION=ritsema-banck
       - LDAP_DOMAIN=ritsema-banck.frl
       - LDAP_BASE_DN=dc=ritsema-banck,dc=frl
+      - LDAP_TLS_VERIFY_CLIENT=try
     volumes:
       - "./tmp/openldap:/var/lib/ldap"
       - "./tmp/openldap-config:/etc/ldap/slapd.d"
@@ -45,7 +47,7 @@ services:
 
   webserver:
     container_name: RB_webserver
-    build: ./dev/
+    build: ./dev/web/
     working_dir: /var/www/
     volumes:
       - .:/var/www/

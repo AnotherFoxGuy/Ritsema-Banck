@@ -19,3 +19,5 @@ COPY intranet.ritsema-banck.conf /etc/apache2/sites-available/intranet.ritsema-b
 RUN a2enmod ldap authnz_ldap
 RUN a2dissite 000-default.conf
 RUN a2ensite 000-ritsema-banck.conf intranet.ritsema-banck.conf
+
+RUN echo "TLS_REQCERT allow" >> /etc/ldap/ldap.conf
