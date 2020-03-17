@@ -1,54 +1,48 @@
-CREATE TABLE `user`
-(
-    `id`        INT PRIMARY KEY AUTO_INCREMENT,
-    `email`     TINYTEXT,
-    `BSN`       INT NOT NULL,
+CREATE TABLE `user` (
+    `id` INT PRIMARY KEY AUTO_INCREMENT,
+    `email` TINYTEXT,
+    `BSN` INT NOT NULL,
     `firstname` TINYTEXT,
-    `lastname`  TINYTEXT,
-    `gender`    TINYTEXT,
-    `tnumber`   TINYTEXT,
-    `banknum`   TINYTEXT,
-    `income`    INT,
-    `partner`   INT
+    `lastname` TINYTEXT,
+    `gender` TINYTEXT,
+    `tnumber` TINYTEXT,
+    `banknum` TINYTEXT,
+    `income` INT,
+    `partner` INT
 );
 
-CREATE TABLE `debt`
-(
-    `id`   INT PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE `debt` (
+    `id` INT PRIMARY KEY AUTO_INCREMENT,
     `user` INT,
-    `s`    INT,
+    `s` INT,
     `desc` TEXT
 );
 
-CREATE TABLE `hypotheeken`
-(
-    `id`          INT PRIMARY KEY AUTO_INCREMENT,
-    `user`        INT,
-    `status`      TINYTEXT,
-    `info`        TEXT,
-    `date`        DATE,
+CREATE TABLE `hypotheeken` (
+    `id` INT PRIMARY KEY AUTO_INCREMENT,
+    `user` INT,
+    `status` TINYTEXT,
+    `info` TEXT,
+    `date` DATE,
     `last_update` DATE,
-    `notes`       INT
+    `notes` INT
 );
 
-CREATE TABLE `H_note`
-(
-    `id`     INT PRIMARY KEY AUTO_INCREMENT,
-    `date`   DATE,
-    `text`   TEXT,
-    `read`   TINYINT,
+CREATE TABLE `H_note` (
+    `id` INT PRIMARY KEY AUTO_INCREMENT,
+    `date` DATE,
+    `text` TEXT,
+    `read` TINYINT,
     `sender` INT
 );
 
-CREATE TABLE `QA`
-(
-    `id`       INT PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE `QA` (
+    `id` INT PRIMARY KEY AUTO_INCREMENT,
     `question` TINYTEXT,
-    `answer`   TEXT
+    `answer` TEXT
 );
 
-CREATE TABLE `genID`
-(
+CREATE TABLE `genID` (
     `id` INT PRIMARY KEY AUTO_INCREMENT
 );
 
