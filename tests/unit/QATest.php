@@ -19,9 +19,7 @@ class QATest extends Unit
     public function test001SaveQA()
     {
         $man = new QA_Manager();
-        $qa = new QA();
-        $qa->Question = "Waarvan is kaas gemaakt?";
-        $qa->Answer = "Van melk";
+        $qa = new QA("Waarvan is kaas gemaakt?", "Van melk");
         $man->SaveQA($qa);
 
         $this->tester->seeInDatabase('QA', ['question' => 'Waarvan is kaas gemaakt?', 'answer' => 'Van melk']);
@@ -32,9 +30,7 @@ class QATest extends Unit
         sleep(1);
 
         $man = new QA_Manager();
-        $qa = new QA();
-        $qa->Question = "Waarvan is kaas gemaakt?";
-        $qa->Answer = "Van melk";
+        $qa = new QA("Waarvan is kaas gemaakt?", "Van melk");
         $man->SaveQA($qa);
 
         sleep(1);

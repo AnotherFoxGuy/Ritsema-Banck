@@ -4,7 +4,7 @@ namespace RitsemaBanck;
 
 use RitsemaBanck\models\QA;
 
-require __DIR__ . '/../../vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 class QA_Manager
 {

@@ -3,9 +3,9 @@ require __DIR__ . '/../vendor/autoload.php';
 
 use RitsemaBanck\QA_Manager;
 
-$qa = new QA_Manager();
+$qam = new QA_Manager();
 
-$list = $qa->GetListFromDB();
+$list = $qam->GetListFromDB();
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,16 +13,26 @@ $list = $qa->GetListFromDB();
     <link rel="stylesheet" href="css/style.css">
 </header>
 <body>
-<div class="twelve wide white rounded container">
-    <div class="centered padded row">
+<div class="eight wide white rounded container">
+    <table style="width:50%">
+        <thead>
+        <tr>
+            <th>Question</th>
+            <th>Answer</th>
+        </tr>
+        </thead>
+        <tbody>
         <?php
         foreach ($list as $i)
-            echo "<div class=\"centered column\">
-            $i[1] <br>
-            $i[2]
-        </div>"
+            echo "
+        <tr>
+            <td>$i[1]</td>
+            <td>$i[2]</td>
+        </tr>"
         ?>
-    </div>
+        </tbody>
+    </table>
+</div>
 
 </div>
 </body>
