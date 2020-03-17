@@ -16,7 +16,7 @@ class QATest extends Unit
     protected QA_Manager $man;
 
     // tests
-    public function testSaveQA()
+    public function test001SaveQA()
     {
         $man = new QA_Manager();
         $qa = new QA();
@@ -27,20 +27,32 @@ class QATest extends Unit
         $this->tester->seeInDatabase('QA', ['question' => 'Waarvan is kaas gemaakt?', 'answer' => 'Van melk']);
     }
 
-    public function testGetAllQA()
+    public function test002GetAllQA()
     {
         $man = new QA_Manager();
+        $qa = new QA();
+        $qa->Question = "Waarvan is kaas gemaakt?";
+        $qa->Answer = "Van melk";
+        $man->SaveQA($qa);
+
+        sleep(1);
+
         $list = $man->GetListFromDB();
 
-        $this->assertContains('Van melk', $list[0]);
+        $found = 0;
+        foreach ($list as $item) {
+            if ($item[2] === 'Van melk')
+                $found++;
+        }
+
+        $this->assertGreaterThan(0, $found, "QA Not found in DB!!!");
     }
 
-    public function testDeleteQA()
+    public function test003DeleteQA()
     {
         $man = new QA_Manager();
         $list = $man->GetListFromDB();
-        foreach ($list as $i)
-        {
+        foreach ($list as $i) {
             $man->DeleteByID($i[0]);
         }
 
