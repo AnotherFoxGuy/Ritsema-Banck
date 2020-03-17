@@ -9,6 +9,6 @@ modules:
     - Asserts
     - \Helper\Unit
     - Db:
-        dsn: 'mysql:host=mariadb;dbname=ritsema_banck'
-        user: 'admin'
-        password: 'admin'
+        dsn: "mysql:host=mariadb;dbname=ritsema_banck"
+        user: "admin"
+        password: "admin"

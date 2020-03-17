@@ -2,6 +2,7 @@
 
 
 namespace RitsemaBanck;
+
 use mysqli;
 
 class ConnectDB
@@ -12,11 +13,13 @@ class ConnectDB
     private $database = "ritsema_banck";
     private $conn;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->conn = new MySQLi($this->servername, $this->username, $this->password, $this->database);
     }
 
-    public function getConnection() {
+    public function getConnection()
+    {
         return $this->conn;
     }
 }
