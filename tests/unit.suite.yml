@@ -4,7 +4,11 @@
 
 actor: UnitTester
 modules:
+  step_decorators: ~
   enabled:
     - Asserts
     - \Helper\Unit
-  step_decorators: ~
+    - Db:
+        dsn: 'mysql:host=mariadb;dbname=ritsema_banck'
+        user: 'admin'
+        password: 'admin'
