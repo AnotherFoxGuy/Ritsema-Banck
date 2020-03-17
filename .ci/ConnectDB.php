@@ -2,6 +2,7 @@
 
 
 namespace RitsemaBanck;
+
 use mysqli;
 
 class ConnectDB

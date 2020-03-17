@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . '/lib/ldap_config.php';
+require __DIR__ . '/lib/config/ldap_config.php';
 
 use LdapRecord\Models\OpenLDAP\User;
 use LdapRecord\Models\OpenLDAP\Group;
@@ -16,3 +16,5 @@ $user->inside('ou=users,dc=ritsema-banck,dc=frl')->save();
 
 
 //$group = Group::findOrFail('cn=web,dc=ritsema-banck,dc=frl');
+
+echo "done";

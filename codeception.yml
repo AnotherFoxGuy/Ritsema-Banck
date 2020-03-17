@@ -11,4 +11,4 @@ extensions:
 coverage:
   enabled: true
   include:
-    - src/*.php
+    - lib/*.php
