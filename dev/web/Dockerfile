@@ -11,7 +11,7 @@ RUN yes | pecl install xdebug \
     && echo "xdebug.remote_enable=on" >> /usr/local/etc/php/conf.d/xdebug.ini
 #    && echo "xdebug.remote_host=TODO" >> /usr/local/etc/php/conf.d/xdebug.ini
 
-RUN docker-php-ext-install bz2 ldap mysqli zip
+RUN docker-php-ext-install bz2 ldap pdo_mysql mysqli zip
 
 RUN rm -rfv /var/www/
 COPY ritsema-banck.conf /etc/apache2/sites-available/000-ritsema-banck.conf
