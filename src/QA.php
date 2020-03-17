@@ -23,12 +23,13 @@ $list = $qam->GetListFromDB();
         </thead>
         <tbody>
         <?php
-        foreach ($list as $i)
+        foreach ($list as $i) {
             echo "
         <tr>
             <td>$i[1]</td>
             <td>$i[2]</td>
-        </tr>"
+        </tr>";
+        }
         ?>
         </tbody>
     </table>

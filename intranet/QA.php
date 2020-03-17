@@ -32,11 +32,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <div class="grid-container">
     <?php
 
-    if ($message)
+    if ($message) {
         echo "
         <div class=\"callout success\">
         $message
-        </div>"
+        </div>";
+    }
 
     ?><br>
     <table>
@@ -51,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <tbody>
         <?php
         $list = $qam->GetListFromDB();
-        foreach ($list as $i)
+        foreach ($list as $i) {
             echo "
             <tr>
                 <td>$i[0]</td>
@@ -63,7 +64,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <button class=\"alert button\">Delete</button>
                  </form>
                 </td>
-            </tr>"
+            </tr>";
+        }
         ?>
         </tbody>
     </table>
