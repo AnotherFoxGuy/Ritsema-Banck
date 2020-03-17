@@ -15,4 +15,4 @@ $user->userPassword = 'test';
 $user->inside('ou=users,dc=ritsema-banck,dc=frl')->save();
 
 
-$group = Group::findOrFail('cn=web,dc=ritsema-banck,dc=frl');
+//$group = Group::findOrFail('cn=web,dc=ritsema-banck,dc=frl');
