@@ -94,7 +94,7 @@ if ($addResult === true) {
         $message[] = "$errno - $error";
         die();
     } else {
-        echo "Ṕassword assigned....\n";
+        echo "Password assigned....\n";
     }
 
     // now get the object from the database and check the values.
