@@ -8,3 +8,8 @@ $qa = new QA_Manager();
 
 $list = $qa->GetListFromDB();
 var_dump($list);
+
+foreach ($list as $item){
+    if($item[2] === 'Van melk')
+        echo "Found!";
+}
