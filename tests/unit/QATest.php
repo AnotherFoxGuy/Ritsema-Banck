@@ -1,4 +1,4 @@
-<?php 
+<?php
 class QATest extends \Codeception\Test\Unit
 {
     /**
@@ -9,6 +9,5 @@ class QATest extends \Codeception\Test\Unit
     // tests
     public function testSomeFeature()
     {
-
     }
 }
