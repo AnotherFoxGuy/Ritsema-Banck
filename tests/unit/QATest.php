@@ -29,6 +29,8 @@ class QATest extends Unit
 
     public function test002GetAllQA()
     {
+        sleep(1);
+
         $man = new QA_Manager();
         $qa = new QA();
         $qa->Question = "Waarvan is kaas gemaakt?";
@@ -58,5 +60,4 @@ class QATest extends Unit
 
         $this->tester->dontSeeInDatabase('QA', ['question' => 'Waarvan is kaas gemaakt?', 'answer' => 'Van melk']);
     }
-
 }
