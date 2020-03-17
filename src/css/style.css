@@ -18,9 +18,9 @@
       --hs-red: #ef4135;
       --hs-light-gray: rgba(180, 180, 180, 0.6);
 }
-  
+
   /* variabelen uit :root kunnen aangeroepen worden door bijvoorbeeld te zeggen: background-color: var(--hs-red); */
-  
+
 * {
       box-sizing: border-box;
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -33,7 +33,7 @@ body {
 /* --------------------------------------------------------------
                               Rows & columns
 -------------------------------------------------------------- */
-  
+
 .row {
       padding-bottom: 20px;
 }

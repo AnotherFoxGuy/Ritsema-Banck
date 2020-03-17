@@ -57,4 +57,3 @@ ALTER TABLE `hypotheeken`
 
 ALTER TABLE `H_note`
     ADD FOREIGN KEY (`sender`) REFERENCES `user` (`id`);
-
