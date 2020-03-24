@@ -31,8 +31,8 @@
       "iso_url": "http://mirror.transip.net/ubuntu/cdimages/19.10.1/release/ubuntu-19.10-server-amd64.iso",
       "iso_checksum": "921fd8b271c04aa86a321cc35b40e677f9b85f7903bf2204efb2389b0f0a64c1",
       "iso_checksum_type": "sha256",
-      "ssh_username": "packer",
-      "ssh_password": "packer",
+      "ssh_username": "root",
+      "ssh_password": "0564b45a2aa7c53c1370fc0201ecaab3",
       "ssh_wait_timeout": "10000s",
       "disk_size": 20000,
       "hard_drive_discard": true,
@@ -40,25 +40,50 @@
       "memory": 4096,
       "vm_name": "Ritsema-Banck",
       "http_directory": ".",
-      "shutdown_command": "echo 'packer' | sudo -S poweroff"
+      "shutdown_command": "poweroff"
     }
   ],
   "provisioners": [
     {
       "type": "shell",
       "inline": [
-        "echo 'packer' | sudo -S chown -R packer: /var/www/html/",
-        "echo 'packer' | sudo -S rm -vf /var/www/html/index.html",
-        "echo 'packer' | sudo -S a2enmod ldap authnz_ldap",
-        "wget http://prdownloads.sourceforge.net/webadmin/webmin_1.941_all.deb",
-        "echo 'packer' | sudo -S dpkg -i webmin_1.941_all.deb",
-        "echo 'packer' | sudo -S apt-get install -f"
+        "mkdir -p /var/www/src/",
+        "mkdir -p /var/www/lib/",
+        "mkdir -p /var/www/intranet/",
+        "chown -R packer: /var/www/"
       ]
     },
     {
       "type": "file",
-      "source": "./src/",
-      "destination": " /var/www/html"
+      "source": "./src",
+      "destination": "/var/www/src"
+    },
+    {
+      "type": "file",
+      "source": "./lib",
+      "destination": "/var/www/lib"
+    },
+    {
+      "type": "file",
+      "source": "./intranet",
+      "destination": "/var/www/intranet"
+    },
+    {
+      "type": "file",
+      "source": "./composer.json",
+      "destination": "/var/www/composer.json"
+    },
+    {
+      "type": "chef-client",
+      "server_url": "https://vps.anotherfoxguy.com/organizations/rbanck",
+      "validation_client_name": "rbanck-validator",
+      "validation_key_path": "rbanck-validator.pem",
+      "run_list": [
+        "recipe[ritsema-banck::default]",
+        "recipe[ritsema-banck::security]"
+      ],
+      "skip_clean_client": true,
+      "skip_clean_node": true
     }
   ]
 }
