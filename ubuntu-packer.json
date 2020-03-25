@@ -55,17 +55,17 @@
     },
     {
       "type": "file",
-      "source": "./src",
+      "source": "./src/",
       "destination": "/var/www/src"
     },
     {
       "type": "file",
-      "source": "./lib",
+      "source": "./lib/",
       "destination": "/var/www/lib"
     },
     {
       "type": "file",
-      "source": "./intranet",
+      "source": "./intranet/",
       "destination": "/var/www/intranet"
     },
     {
