@@ -1,11 +1,12 @@
 class popup {
-
   constructor(json) {
     this.json = json;
     this.inputs = [];
   }
 
-  set image(image) { this.image = image; }
+  set image(image) {
+    this.image = image;
+  }
 
   generate() {
     var overlay = document.createElement("DIV");
@@ -15,8 +16,14 @@ class popup {
     var popup = document.createElement("DIV");
 
     var wrapper = document.createElement("DIV");
-    wrapper.classList.add("four", "wide", "white", "rounded", "popup",
-                          "container");
+    wrapper.classList.add(
+      "four",
+      "wide",
+      "white",
+      "rounded",
+      "popup",
+      "container"
+    );
     wrapper.id = "wrapper";
 
     var container = document.createElement("DIV");
@@ -32,7 +39,7 @@ class popup {
 
     container.appendChild(row);
 
-    if ('inputs' in this.json) {
+    if ("inputs" in this.json) {
       for (var i = 0; i < this.json.inputs.length; i++) {
         var row = document.createElement("DIV");
         row.classList.add("row");
@@ -67,7 +74,7 @@ class popup {
     document.body.appendChild(popup);
 
     this.button = document.getElementById(this.json.button.id);
-    if ('inputs' in this.json) {
+    if ("inputs" in this.json) {
       for (var i = 0; i < this.json.inputs.length; i++) {
         this.inputs.push(document.getElementById(this.json.inputs[i].id));
       }
@@ -76,15 +83,15 @@ class popup {
 
   action(action) {
     switch (action) {
-    case "fade":
-      this.button.addEventListener("click", this.fade);
-      break;
-    case "close":
-      this.button.addEventListener("click", this.close);
-      break;
-    default:
-      alert("Default");
-      break;
+      case "fade":
+        this.button.addEventListener("click", this.fade);
+        break;
+      case "close":
+        this.button.addEventListener("click", this.close);
+        break;
+      default:
+        alert("Default");
+        break;
     }
   }
 
