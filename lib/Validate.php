@@ -3,7 +3,6 @@ namespace RitsemaBanck;
 
 class validation
 {
-
     private $errors = array();
 
     // returns either true of false based on a regular expression

@@ -1,6 +1,7 @@
 <?php
 
 namespace RitsemaBanck;
+
 class Token
 {
     private $username;
