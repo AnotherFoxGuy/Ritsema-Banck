@@ -1,5 +1,6 @@
 <?php
 namespace RitsemaBanck;
+
 class Session
 {
     public static function is_private($page): bool

@@ -1,6 +1,7 @@
 <?php
 
 namespace RitsemaBanck;
+
 class User
 {
     public $id;
@@ -39,6 +40,4 @@ class User
             return false;
         }
     }
-
-
 }
