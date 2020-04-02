@@ -82,4 +82,3 @@ if ($cookie->does_cookie_exist()) {
         </div>
     </nav>
 </div>
-
