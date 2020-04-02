@@ -6,34 +6,26 @@ document.getElementById("submit").addEventListener("click", function() {
         animate();
       } else {
         console.log(this.responseText);
-        var json = '{"title" : "$s", "button" : { "label" : "Sluiten", "id" : "button_code" }}'.replace(
-          "$s",
-          this.responseText
-        );
+        var json =
+            '{"title" : "$s", "button" : { "label" : "Sluiten", "id" : "button_code" }}'
+                .replace("$s", this.responseText);
         console.log(json);
         pop = new popup(JSON.parse(json));
         pop.generate();
 
-        pop.button.addEventListener("click", function() {
-          pop.close();
-        });
+        pop.button.addEventListener("click", function() { pop.close(); });
       }
     }
   };
   xhttp.open("POST", "validation.php", true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xhttp.send(
-    "email=" +
-      document.getElementById("email").value +
-      "&password=" +
-      document.getElementById("password").value
-  );
+  xhttp.send("email=" + document.getElementById("email").value +
+             "&password=" + document.getElementById("password").value);
 });
 
 function animate() {
   var json = JSON.parse(
-    '{"title" : "Twee factor authenticatie", "inputs" : [{"description" : "Voer je code in", "name" : "code", "id" : "input_code"}], "button" : { "label" : "Verstuur", "id" : "button_code" }}'
-  );
+      '{"title" : "Twee factor authenticatie", "inputs" : [{"description" : "Voer je code in", "name" : "code", "id" : "input_code"}], "button" : { "label" : "Verstuur", "id" : "button_code" }}');
   pop = new popup(json);
   pop.generate();
 
