@@ -1,6 +1,7 @@
 <?php
 
 namespace RitsemaBanck;
+
 class Database
 {
     private $server;
@@ -11,7 +12,6 @@ class Database
 
     public function __construct()
     {
-
     }
 
     public function connect($server, $username, $password, $database): bool
