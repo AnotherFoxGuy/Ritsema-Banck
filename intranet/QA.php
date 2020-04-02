@@ -29,6 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 </head>
 <body>
+<?php require __DIR__ . '/topbar.php'; ?>
 <div class="grid-container">
     <?php
 
