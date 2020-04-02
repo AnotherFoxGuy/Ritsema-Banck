@@ -6,9 +6,9 @@ use LdapRecord\Connection;
 use LdapRecord\Container;
 
 $connection = new Connection([
-    'hosts'    => ['openldap'],
-    'port'     => 389,
-    'use_ssl'  => true,
+    'hosts' => ['openldap'],
+    'port' => 389,
+    'use_ssl' => true,
     //'use_tls'  => true,
     'username' => 'cn=admin, dc=ritsema-banck, dc=frl',
     'password' => 'admin',
