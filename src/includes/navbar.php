@@ -47,11 +47,15 @@ if ($cookie->does_cookie_exist()) {
     <title>Ritsema Banck</title>
     <link rel='icon' href='http://ritsema-banck.frl/img/ritsemabanck-favicon.png' type='image/x-icon'/>
     <link type="text/css" rel="stylesheet" href="http://ritsema-banck.frl/css/style.css"/>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
 </head>
 <body>
 <div class="row nopad">
     <nav class="twelve wide centered container">
-        <a href="/"><img class="navbar-logo" src="http://ritsema-banck.frl/img/Ritsema%20Banck%20logo.png" alt="navbar logo"></a>
+        <a href="/"><img class="navbar-logo" src="http://ritsema-banck.frl/img/Ritsema%20Banck%20logo.png"
+                         alt="navbar logo"></a>
 
         <div class="navbar-menu-wrapper centered column">
             <span id="openNav">&#9776;</span>
