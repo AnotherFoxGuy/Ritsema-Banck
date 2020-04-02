@@ -64,20 +64,20 @@ if ($cookie->does_cookie_exist()) {
         <div id="mobileNav" class="overlay">
             <a href="javascript:void(0)" class="closebtn" id="closeNav">&times;</a>
             <div class="overlay-content">
-                <a href="/">HOME</a>
-                <?php echo ($_SESSION["logged_in"] == false) ? '<a href="login.php">INLOGGEN</a>' : '<a href="overview.php">OVERZICHT</a>'; ?>
-                <a href="//intranet.ritsema-banck.frl/">INTRANET</a>
-                <a href="contact.php">CONTACT</a>
+                <a href="/">Home</a>
+                <?php echo ($_SESSION["logged_in"] == false) ? '<a href="login.php">Inloggen</a>' : '<a href="overview.php">Overzicht</a>'; ?>
+                <a href="QA.php">Veelgestelde vragen</a>
+                <a href="contact.php">Contact</a>
             </div>
         </div>
 
         <div class="nav-links">
             <ul>
-                <li><a href="/">HOME</a></li>
-                <li><?php echo ($_SESSION["logged_in"] == false) ? '<a href="index.php">INLOGGEN</a>' : '<a href="overview.php">OVERZICHT</a>'; ?></li>
-                <li><a href="//intranet.ritsema-banck.frl">INTRANET</a></li>
-                <?php echo ($_SESSION["logged_in"] == true) ? '<li><a href="logout.php">UITLOGGEN</a></li>' : ''; ?>
-                <li><a href="contact.php">CONTACT</a></li>
+                <li><a href="/">Home</a></li>
+                <li><?php echo ($_SESSION["logged_in"] == false) ? '<a href="index.php">Inloggen</a>' : '<a href="overview.php">Overzicht</a>'; ?></li>
+                <?php echo ($_SESSION["logged_in"] == true) ? '<li><a href="logout.php">Uitloggen</a></li>' : ''; ?>
+                <li><a href="QA.php">Veelgestelde vragen</a></li>
+                <li><a href="contact.php">Contact</a></li>
             </ul>
         </div>
     </nav>

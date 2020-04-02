@@ -4,24 +4,15 @@
             <div class="three wide column">
                 <h4>Sitemap </h4>
                 <ul>
-                    <li><a href="http://ritsema-banck.frl/temp/index.php">Home</a></li>
-                    <li><a href="http://ritsema-banck.frl/temp/login.php">Inloggen</a></li>
-                    <li><a href="http://ritsema-banck.frl/temp/contact.php">Contact</a></li>
-                    <li><a href="http://ritsema-banck.frl/temp/about.php">Over ons</a></li>
-                    <li><a href="http://ritsema-banck.frl/temp/overview.php">Overzicht</a></li>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="QA.php">Veelgestelde vragen</a></li>
+                    <li><a href="login.php">Inloggen</a></li>
+                    <li><a href="contact.php">Contact</a></li>
+                    <li><a href="about.php">Over ons</a></li>
+                    <li><a href="overview.php">Overzicht</a></li>
+                    <li><a href="//intranet.ritsema-banck.frl/">intranet</a></li>
                 </ul>
             </div>
-<!--            <div class="three wide column">-->
-<!--                <h4>Sitemap </h4>-->
-<!--                <ul>-->
-<!--                    <li><a href="http://ritsema-banck.frl/temp/index.php">Home</a></li>-->
-<!--                    <li><a href="http://ritsema-banck.frl/temp/login.php">Inloggen</a></li>-->
-<!--                    <li><a href="http://ritsema-banck.frl/temp/contact.php">Contact</a></li>-->
-<!--                    <li><a href="http://ritsema-banck.frl/temp/about.php">Over ons</a></li>-->
-<!--                    <li><a href="http://ritsema-banck.frl/temp/overview.php">Overzicht</a></li>-->
-<!---->
-<!--                </ul>-->
-<!--            </div>-->
         </div>
     </div>
 </footer>
