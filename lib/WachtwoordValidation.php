@@ -19,12 +19,9 @@ class WachtwoordValidation
     public function testLength($pw)
     {
         $count = strlen($pw);
-        if ($count < 8)
-        {
+        if ($count < 8) {
             return false;
-        }
-        else
-        {
+        } else {
             $this->setPassword($pw);
         }
     }
@@ -32,12 +29,9 @@ class WachtwoordValidation
     public function testUppercase($pw)
     {
         $uppercase = preg_match("@[A-Z]@", $pw);
-        if($uppercase)
-        {
+        if ($uppercase) {
             $this->testLength($pw);
-        }
-        else
-        {
+        } else {
             return false;
         }
     }
@@ -45,12 +39,9 @@ class WachtwoordValidation
     public function testLowercase($pw)
     {
         $lowercase = preg_match("@[a-z]@", $pw);
-        if($lowercase)
-        {
+        if ($lowercase) {
             $this->testUppercase($pw);
-        }
-        else
-        {
+        } else {
             return false;
         }
     }
@@ -58,12 +49,9 @@ class WachtwoordValidation
     public function testNumber($pw)
     {
         $Number = preg_match("@[0-9]@", $pw);
-        if($Number)
-        {
+        if ($Number) {
             $this->testLowercase($pw);
-        }
-        else
-        {
+        } else {
             return false;
         }
     }
@@ -71,12 +59,9 @@ class WachtwoordValidation
     public function testSpecialCharacter($pw)
     {
         $SC = preg_match("@[^\w]@", $pw);
-        if($SC)
-        {
+        if ($SC) {
             $this->testNumber($pw);
-        }
-        else
-        {
+        } else {
             return false;
         }
     }

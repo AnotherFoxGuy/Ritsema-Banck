@@ -12,16 +12,12 @@ class NaamValidation
         $temp = str_split($firstName);
         $bool = true;
         while ($bool == true) {
-            for ($i = 0; $i < count($temp); $i++)
-            {
-                if (preg_match("@[a-z]@", $temp[$i]))
-                {
+            for ($i = 0; $i < count($temp); $i++) {
+                if (preg_match("@[a-z]@", $temp[$i])) {
                     continue;
                 }
-                if ($i == 0)
-                {
-                    if (preg_match("@[A-Z]@", $temp[$i]))
-                    {
+                if ($i == 0) {
+                    if (preg_match("@[A-Z]@", $temp[$i])) {
                         continue;
                     }
                 }
@@ -38,16 +34,12 @@ class NaamValidation
         $temp = str_split($lastName);
         $bool = true;
         while ($bool == true) {
-            for ($i = 0; $i < count($temp); $i++)
-            {
-                if (preg_match("@[a-z]@", $temp[$i]))
-                {
+            for ($i = 0; $i < count($temp); $i++) {
+                if (preg_match("@[a-z]@", $temp[$i])) {
                     continue;
                 }
-                if ($i == 0)
-                {
-                    if (preg_match("@[A-Z]@", $temp[$i]))
-                    {
+                if ($i == 0) {
+                    if (preg_match("@[A-Z]@", $temp[$i])) {
                         continue;
                     }
                 }

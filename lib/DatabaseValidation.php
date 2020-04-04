@@ -15,12 +15,10 @@ class DatabaseValidation
     {
         $conn = new mysqli($this->servername, $this->username, $this->password, $this->dbName);
 
-        if ($conn->connect_error)
-        {
+        if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
-        }
-        else{
-            return True;
+        } else {
+            return true;
         }
     }
 
@@ -29,12 +27,9 @@ class DatabaseValidation
         $conn = new mysqli($this->servername, $this->username, $this->password, $this->dbName);
         $sql = "INSERT INTO user (email, BSN, firstname, lastname, gender, tnumber) VALUES ('$email', '$bsn', '$firstName', '$lastName', '$gender', '$tnumber')";
 
-        if ($conn->query($sql) === TRUE)
-        {
+        if ($conn->query($sql) === true) {
             return true;
-        }
-        else
-        {
+        } else {
             return false;
         }
     }
