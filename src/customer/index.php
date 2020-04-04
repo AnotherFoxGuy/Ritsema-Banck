@@ -8,7 +8,7 @@
                     <button class="ten wide blue button">Inloggen</button>
                 </div>
                 <div class="six wide centered column">
-                    <button class="ten wide blue inverted button"><a href="/customer/registration.php">Registreren</a>
+                    <button class="ten wide blue inverted button"><a href="/customer/register.php">Registreren</a>
                     </button>
                 </div>
             </div>
@@ -18,28 +18,27 @@
             <div class="row">
                 <div class="twelve wide column">
                     <label for="email">E-mailadres</label>
-                    <input id="email" name="email" type="email" id="email" placeholder="Voer je e-mail in">
+                    <input id="email" name="email" type="email" placeholder="Voer je e-mail in">
                 </div>
             </div>
 
             <div class="row">
                 <div class="twelve wide column">
                     <label for="password">Wachtwoord</label>
-                    <input id="password" name="password" type="password" id="password"
+                    <input id="password" name="password" type="password"
                            placeholder="Voer je wachtwoord in">
                 </div>
             </div>
 
             <div class="row">
                 <div class="twelve wide column">
-                    <button class="twelve wide blue button" id="submit">Inloggen
+                    <button class="twelve wide blue button" id="submit">Inloggen</button>
                 </div>
-                </button>
+
             </div>
         </div>
     </div>
 
-    </div>
     <script src="/js/popup/popup.js"></script>
     <script src="/js/binding.js"></script>
 
