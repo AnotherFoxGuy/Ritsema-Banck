@@ -6,7 +6,7 @@ use FPDF;
 
 class PDF extends FPDF
 {
-    function Header()
+    public function Header()
     {
         $this->Image('../img/Ritsema Banck logo.png', 10, 6, 50);
         $this->SetFont('Arial', 'B', 15);
@@ -15,7 +15,7 @@ class PDF extends FPDF
         $this->Ln(20);
     }
 
-    function Footer()
+    public function Footer()
     {
         $this->SetY(-15);
         $this->SetFont('Arial', 'I', 8);
