@@ -47,7 +47,7 @@ $pdf->AliasNbPages();
 $pdf->AddPage();
 
 $pdf->setFont("Arial", "I", 12);
-$pdf->write(5, "Dit document bevat alle gegevens die wij van u hebben. Als u vragen heeft verwijzen wij naar ons privacystatement.\nMailen kan altijd naar info@ritsemabanck.frl\n.");
+$pdf->write(5, "Dit document bevat alle gegevens die wij van u hebben. Als u vragen heeft verwijzen wij naar ons privacystatement.\nMailen kan altijd naar info@ritsemabanck.frl.\n");
 $pdf->Ln();
 
 $pdf->setFont("Arial", "B", 12);

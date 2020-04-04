@@ -1,4 +1,5 @@
 <?php
+
 namespace RitsemaBanck;
 
 class Cookie
@@ -15,6 +16,13 @@ class Cookie
     {
         $this->value = $value;
         setcookie($this->name, $this->value, time() + 86400, "/");
+    }
+
+    public function update(): void
+    {
+        $value = Token::decode($this->get_value());
+        $value->timestamp = time();
+        setcookie("token", Token::encode($value->username, $value->timestamp, $value->verified), time() + 86400, "/");
     }
 
     public function delete()
