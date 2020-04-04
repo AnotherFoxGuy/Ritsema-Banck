@@ -39,7 +39,7 @@ if (isset($_POST['submit'])) {
         header("Location: /customer/mortgagerequest.php?mortgagerequest=number&birthdate=$birthdate&gross_anual_income=$gross_anual_income&input_money=$input_money&dept=$dept&purchase_price=$purchase_price&email=$email&mortgage_duration=$mortgage_duration");
         exit();
     } else {
-        header("Location: /customer/index.php?submitted_form=mortgage_request&mortgage=$mortgage");
+        header("Location: /customer/received.php?submitted_form=mortgage_request&mortgage=$mortgage");
         exit();
     }
 

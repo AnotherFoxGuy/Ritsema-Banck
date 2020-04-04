@@ -17,7 +17,7 @@
     </div>
 </footer>
 
-<script type="text/javascript" src="js/javascript.js"></script>
+<script type="text/javascript" src="/js/javascript.js"></script>
 <?php
 session_unset();
 session_destroy();

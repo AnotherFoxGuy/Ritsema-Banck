@@ -4,7 +4,6 @@ use RitsemaBanck\Database;
 use RitsemaBanck\Session;
 
 require __DIR__ . '/../../vendor/autoload.php';
-require __DIR__ . '/../includes/navbar.php';
 
 if (session::is_private("overview")) {
     if (isset($_SESSION["logged_in"])) {
@@ -13,7 +12,7 @@ if (session::is_private("overview")) {
         }
     }
 }
-
+require __DIR__ . '/../includes/navbar.php';
 
 ?>
 

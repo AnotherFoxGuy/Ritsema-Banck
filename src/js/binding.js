@@ -43,7 +43,7 @@ function animate() {
       if (this.readyState == 4 && this.status == 200) {
         if (this.responseText == "true") {
           pop.close();
-          document.location = "../Julian/overview.php";
+          document.location = "/customer/overview.php";
         }
       }
     };

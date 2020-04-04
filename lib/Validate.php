@@ -1,7 +1,7 @@
 <?php
 namespace RitsemaBanck;
 
-class validation
+class Validate
 {
     private $errors = array();
 

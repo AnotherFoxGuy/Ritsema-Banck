@@ -2,12 +2,14 @@
 
 use RitsemaBanck\Cookie;
 use RitsemaBanck\Token;
-use RitsemaBanck\validation;
+use RitsemaBanck\Validate;
+
+require __DIR__ . '/../../vendor/autoload.php';
 
 if ((isset($_POST["email"])) && (isset($_POST["password"]))) {
     $email = $_POST["email"];
     $password = $_POST["password"];
-    $validation = new validation();
+    $validation = new Validate();
 
     if ($validation->filter_length($email)) {
         if ($validation->filter_length($password)) {
@@ -36,7 +38,7 @@ if ((isset($_POST["email"])) && (isset($_POST["password"]))) {
 
 if (isset($_POST["code"])) {
     $code = $_POST["code"];
-    $validation = new validation();
+    $validation = new Validate();
     if ($validation->filter_length($code)) {
         if ($validation->filter_characters($code)) {
             if ($validation->filter_alphanumeric($code)) {
