@@ -17,7 +17,7 @@ if ($cookie->does_cookie_exist()) {
         $cookie->update();
         $database = new Database();
         $database->connect("localhost", "root", "", "ritsemabanck");
-        $result = $database->fetch($database->select("SELECT * FROM User WHERE email = ?", array(Token::decode($cookie->get_value())->username)));
+        $result = $database->fetch($database->select("SELECT * FROM user WHERE email = ?", array(Token::decode($cookie->get_value())->username)));
 
         $user = new User();
         $user->id = $result["id"];
@@ -36,7 +36,7 @@ if ($cookie->does_cookie_exist()) {
         $_SESSION["user"] = $user;
     } else {
         $_SESSION["logged_in"] = false;
-        header("Location: ../Pieter/index.php");
+        header("Location: /customer");
     }
 } else {
     $_SESSION["logged_in"] = false;

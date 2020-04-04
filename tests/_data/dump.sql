@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `debt` (
-                        `id` int(11) NOT NULL,
+                        `id` INT PRIMARY KEY AUTO_INCREMENT,
                         `user` int(11) DEFAULT NULL,
                         `s` int(11) DEFAULT NULL,
                         `desc` text DEFAULT NULL
@@ -52,7 +52,7 @@ CREATE TABLE `genID` (
 --
 
 CREATE TABLE `hypotheeken` (
-                               `id` int(11) NOT NULL,
+                               `id` INT PRIMARY KEY AUTO_INCREMENT,
                                `user` int(11) DEFAULT NULL,
                                `status` tinytext DEFAULT NULL,
                                `info` text DEFAULT NULL,
@@ -75,7 +75,7 @@ INSERT INTO `hypotheeken` (`id`, `user`, `status`, `info`, `date`, `last_update`
 --
 
 CREATE TABLE `H_note` (
-                          `id` int(11) NOT NULL,
+                          `id` INT PRIMARY KEY AUTO_INCREMENT,
                           `date` date DEFAULT NULL,
                           `text` text DEFAULT NULL,
                           `read` tinyint(4) DEFAULT NULL,
@@ -89,7 +89,7 @@ CREATE TABLE `H_note` (
 --
 
 CREATE TABLE `QA` (
-                      `id` int(11) NOT NULL,
+                      `id` INT PRIMARY KEY AUTO_INCREMENT,
                       `question` tinytext DEFAULT NULL,
                       `answer` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -118,7 +118,7 @@ INSERT INTO `terms` (`text`) VALUES
 --
 
 CREATE TABLE `user` (
-                        `id` int(11) NOT NULL,
+                        `id` INT PRIMARY KEY AUTO_INCREMENT,
                         `username` varchar(100) NOT NULL,
                         `password` varchar(255) NOT NULL,
                         `email` tinytext DEFAULT NULL,
