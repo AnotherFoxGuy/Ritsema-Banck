@@ -1,6 +1,13 @@
 <?php
 require __DIR__ . '/../includes/navbar.php';
 require __DIR__ . '/mortgagevalidations.php';
+
+if (!RitsemaBanck\CheckLogin::validate()) {
+    header("Location: /customer");
+}
+
+$user = RitsemaBanck\CheckLogin::getUser();
+
 ?>
 
 
