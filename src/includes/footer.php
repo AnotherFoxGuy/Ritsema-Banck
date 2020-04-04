@@ -4,13 +4,13 @@
             <div class="three wide column">
                 <h4>Sitemap </h4>
                 <ul>
-                    <li><a href="index.php">Home</a></li>
-                    <li><a href="QA.php">Veelgestelde vragen</a></li>
-                    <li><a href="login.php">Inloggen</a></li>
-                    <li><a href="contact.php">Contact</a></li>
-                    <li><a href="about.php">Over ons</a></li>
-                    <li><a href="overview.php">Overzicht</a></li>
-                    <li><a href="//intranet.ritsema-banck.frl/">intranet</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/QA.php">Veelgestelde vragen</a></li>
+                    <li><a href="/customer">Inloggen</a></li>
+                    <li><a href="/contact.php">Contact</a></li>
+                    <li><a href="/about.php">Over ons</a></li>
+                    <li><a href="/customer/overview.php">Overzicht</a></li>
+                    <li><a href="https://intranet.ritsema-banck.frl/">intranet</a></li>
                 </ul>
             </div>
         </div>

@@ -45,8 +45,8 @@ if ($cookie->does_cookie_exist()) {
 <head>
     <meta charset="UTF-8">
     <title>Ritsema Banck</title>
-    <link rel='icon' href='http://ritsema-banck.frl/img/ritsemabanck-favicon.png' type='image/x-icon'/>
-    <link type="text/css" rel="stylesheet" href="http://ritsema-banck.frl/css/style.css"/>
+    <link rel='icon' href='/img/ritsemabanck-favicon.png' type='image/x-icon'/>
+    <link type="text/css" rel="stylesheet" href="/css/style.css"/>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
             crossorigin="anonymous"></script>
@@ -54,7 +54,7 @@ if ($cookie->does_cookie_exist()) {
 <body>
 <div class="row nopad">
     <nav class="twelve wide centered container">
-        <a href="/"><img class="navbar-logo" src="http://ritsema-banck.frl/img/Ritsema%20Banck%20logo.png"
+        <a href="/"><img class="navbar-logo" src="/img/Ritsema%20Banck%20logo.png"
                          alt="navbar logo"></a>
 
         <div class="navbar-menu-wrapper centered column">
@@ -65,7 +65,7 @@ if ($cookie->does_cookie_exist()) {
             <a href="javascript:void(0)" class="closebtn" id="closeNav">&times;</a>
             <div class="overlay-content">
                 <a href="/">Home</a>
-                <?php echo ($_SESSION["logged_in"] == false) ? '<a href="login.php">Inloggen</a>' : '<a href="overview.php">Overzicht</a>'; ?>
+                <?php echo ($_SESSION["logged_in"] == false) ? '<a href="/customer">Inloggen</a>' : '<a href="/customer/overview.php">Overzicht</a>'; ?>
                 <a href="QA.php">Veelgestelde vragen</a>
                 <a href="contact.php">Contact</a>
             </div>
@@ -74,8 +74,8 @@ if ($cookie->does_cookie_exist()) {
         <div class="nav-links">
             <ul>
                 <li><a href="/">Home</a></li>
-                <li><?php echo ($_SESSION["logged_in"] == false) ? '<a href="index.php">Inloggen</a>' : '<a href="overview.php">Overzicht</a>'; ?></li>
-                <?php echo ($_SESSION["logged_in"] == true) ? '<li><a href="logout.php">Uitloggen</a></li>' : ''; ?>
+                <li><?php echo ($_SESSION["logged_in"] == false) ? '<a href="/customer">Inloggen</a>' : '<a href="/customer/overview.php">Overzicht</a>'; ?></li>
+                <?php echo ($_SESSION["logged_in"] == true) ? '<li><a href="/customer/logout.php">Uitloggen</a></li>' : ''; ?>
                 <li><a href="QA.php">Veelgestelde vragen</a></li>
                 <li><a href="contact.php">Contact</a></li>
             </ul>
