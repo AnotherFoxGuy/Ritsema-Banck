@@ -4,7 +4,7 @@ $submitted_form = $_GET['submitted_form']
 ?>
 
 <?php
-if(isset($_GET['mortgage'])) {
+if (isset($_GET['mortgage'])) {
     $mortgage = $_GET['mortgage'];
     $message_mortgage_request = "U komt in aanmerking voor een hypotheek van €" .$mortgage. ",-";
 }
@@ -18,8 +18,7 @@ $endMessage = "</h2></div></div></div>";
 
 if ($submitted_form == "contact") {
     echo $startMessage . $message_contact . $endMessage;
-}
-elseif ($submitted_form == "mortgage_request") {
+} elseif ($submitted_form == "mortgage_request") {
     echo $startMessage . $message_mortgage_request . $endMessage;
 }
 ?>

@@ -2,7 +2,6 @@
 
 
 if (isset($_POST['submit'])) {
-
     $birthdate = $_POST['birthdate'];
     $gross_anual_income = $_POST['gross_anual_income'];
     $input_money = $_POST['input_money'];
@@ -18,15 +17,12 @@ if (isset($_POST['submit'])) {
 
     if ($mortgage_duration == 5) {
         $key_interest = 1.05;
-    }
-    elseif ($mortgage_duration == 10) {
+    } elseif ($mortgage_duration == 10) {
         $key_interest = 1.036;
-    }
-    elseif ($mortgage_duration == 15) {
+    } elseif ($mortgage_duration == 15) {
         $key_interest = 1.04;
-    }
-    else {
-    $key_interest = 1.036;
+    } else {
+        $key_interest = 1.036;
     }
 
     $mortgage = $maximum_gross_mortgage_burden * $mortgage_duration * $key_interest;
@@ -34,19 +30,15 @@ if (isset($_POST['submit'])) {
     if (empty($birthdate) || empty($email)) {
         header("Location: /customer/mortgagerequest.php?mortgagerequest=empty&birthdate=$birthdate&gross_anual_income=$gross_anual_income&input_money=$input_money&dept=$dept&purchase_price=$purchase_price&email=$email&mortgage_duration=$mortgage_duration");
         exit();
-    }
-    elseif (!preg_match("^\\d{2}/\\d{2}/\\d{4}^", $birthdate)) {
+    } elseif (!preg_match("^\\d{2}/\\d{2}/\\d{4}^", $birthdate)) {
         header("Location: /customer/mortgagerequest.php?mortgagerequest=invaliddate&birthdate=$birthdate&gross_anual_income=$gross_anual_income&input_money=$input_money&dept=$dept&purchase_price=$purchase_price&email=$email&mortgage_duration=$mortgage_duration");
-    }
-    elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         header("Location: /customer/mortgagerequest.php?mortgagerequest=invalidemail&birthdate=$birthdate&gross_anual_income=$gross_anual_income&input_money=$input_money&dept=$dept&purchase_price=$purchase_price&email=$email&mortgage_duration=$mortgage_duration");
         exit();
-    }
-    elseif (!is_numeric($gross_anual_income) || !is_numeric($dept) || !is_numeric($purchase_price) || !is_numeric($mortgage_duration)) {
+    } elseif (!is_numeric($gross_anual_income) || !is_numeric($dept) || !is_numeric($purchase_price) || !is_numeric($mortgage_duration)) {
         header("Location: /customer/mortgagerequest.php?mortgagerequest=number&birthdate=$birthdate&gross_anual_income=$gross_anual_income&input_money=$input_money&dept=$dept&purchase_price=$purchase_price&email=$email&mortgage_duration=$mortgage_duration");
         exit();
-    }
-    else {
+    } else {
         header("Location: /customer/index.php?submitted_form=mortgage_request&mortgage=$mortgage");
         exit();
     }
@@ -67,4 +59,3 @@ if (isset($_POST['submit'])) {
 //        exit();
 //    }
 }
-
