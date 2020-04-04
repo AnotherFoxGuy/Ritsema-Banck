@@ -16,7 +16,7 @@ if ($cookie->does_cookie_exist()) {
         $database = new Database();
         $database->connect("ritsema-banck.frl", "root", "", "ritsemabanck");
         $cookie = new Cookie("token");
-        $result = $database->fetch($database->select("SELECT * FROM User WHERE email = ?", array(Token::decode($cookie->get_value())->username)));
+        $result = $database->fetch($database->select("SELECT * FROM user WHERE email = ?", array(Token::decode($cookie->get_value())->username)));
 
         $user = new User();
         $user->id = $result["id"];
