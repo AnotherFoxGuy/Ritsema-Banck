@@ -82,8 +82,7 @@
         "recipe[ritsema-banck::default]",
         "recipe[ritsema-banck::security]"
       ],
-      "skip_clean_client": true,
-      "skip_clean_node": true
+      "skip_clean_client": true
     }
   ]
 }
