@@ -13,7 +13,7 @@
     <div class="five wide centered column container"></div>
 
     <div class="two wide container">
-        <button class="twelve wide blue button"><a href="../">Verstuur</a></button>
+        <button class="twelve wide blue button"><a href="#">Verstuur</a></button>
     </div>
 </div>
 
