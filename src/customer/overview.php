@@ -132,4 +132,3 @@ if (session::is_private("overview")) {
 
 
 <?php require __DIR__ . '/../includes/footer.php'; ?>
-
