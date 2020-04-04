@@ -18,12 +18,9 @@ class EmailValidation
 
     public function validateEmail($Email)
     {
-        if (!filter_var($Email, FILTER_VALIDATE_EMAIL))
-        {
+        if (!filter_var($Email, FILTER_VALIDATE_EMAIL)) {
             return false;
-        }
-        else
-        {
+        } else {
             return true;
         }
     }

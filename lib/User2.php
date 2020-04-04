@@ -380,10 +380,10 @@ class User2
     {
         return $this->first_Name . " " . $this->last_name;
     }
-//end validation for name
+    //end validation for name
 
 
-//beginning validation for sex
+    //beginning validation for sex
     public function setSex($Sex)
     {
         $this->sex = trim($Sex);
@@ -580,12 +580,9 @@ class User2
 
     public function validateEmail($Email)
     {
-        if (!filter_var($Email, FILTER_VALIDATE_EMAIL))
-        {
+        if (!filter_var($Email, FILTER_VALIDATE_EMAIL)) {
             return false;
-        }
-        else
-        {
+        } else {
             return true;
         }
     }
