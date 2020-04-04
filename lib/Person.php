@@ -13,32 +13,38 @@ class Person
     public $Email = "julian-hulzebosch@live.nl";
 
     //validations for user
-    public function getFirstName(){
+    public function getFirstName()
+    {
         return $this->first_name;
     }
 
-    public function getLastName(){
+    public function getLastName()
+    {
         return $this->last_name;
     }
 
-    public function getFullName(){
+    public function getFullName()
+    {
         return $this->Full_Name;
     }
 
-    public function getGender(){
+    public function getGender()
+    {
         return $this->Gender;
     }
 
-    public function getBornAge(){
+    public function getBornAge()
+    {
         return $this->Born_age;
     }
 
-    public function  getTelephone(){
+    public function getTelephone()
+    {
         return $this->Telephone;
     }
 
-    public function getEmail(){
+    public function getEmail()
+    {
         return $this->Email;
     }
 }
-
