@@ -23,8 +23,8 @@ require __DIR__ . '/mortgagevalidations.php';
     $birthdate = $_GET['birthdate'];
     echo '<input id="birthdate" name="birthdate" type="text" placeholder="dd/mm/jjjj" value="'.$birthdate.'">';
 } else {
-                        echo '<input id="birthdate" name="birthdate" type="text" placeholder="dd/mm/jjjj">';
-                    }?>
+    echo '<input id="birthdate" name="birthdate" type="text" placeholder="dd/mm/jjjj">';
+}?>
                 </div>
             </div>
 
@@ -32,11 +32,11 @@ require __DIR__ . '/mortgagevalidations.php';
                 <div class="twelve wide column">
                     <label for="gross_anual_income">Bruto jaarinkomen</label>
                     <?php if (isset($_GET['gross_anual_income'])) {
-                        $gross_anual_income = $_GET['gross_anual_income'];
-                        echo '<input id="gross_anual_income" name="gross_anual_income" type="text" placeholder="€" value="'.$gross_anual_income.'">';
-                    } else {
-                        echo '<input id="gross_anual_income" name="gross_anual_income" type="text" placeholder="€">';
-                    }?>
+    $gross_anual_income = $_GET['gross_anual_income'];
+    echo '<input id="gross_anual_income" name="gross_anual_income" type="text" placeholder="€" value="'.$gross_anual_income.'">';
+} else {
+    echo '<input id="gross_anual_income" name="gross_anual_income" type="text" placeholder="€">';
+}?>
                 </div>
             </div>
 
@@ -44,11 +44,11 @@ require __DIR__ . '/mortgagevalidations.php';
                 <div class="twelve wide column">
                     <label for="input_money">Eigen inbreng (als u geen eigen inbreng heeft vul hier dan 0 in)</label>
                     <?php if (isset($_GET['input_money'])) {
-                        $input_money = $_GET['input_money'];
-                        echo '<input id="input_money" name="input_money" type="text" placeholder="€" value="'.$input_money.'">';
-                    } else {
-                        echo '<input id="input_money" name="input_money" type="text" placeholder="€">';
-                    }?>
+    $input_money = $_GET['input_money'];
+    echo '<input id="input_money" name="input_money" type="text" placeholder="€" value="'.$input_money.'">';
+} else {
+    echo '<input id="input_money" name="input_money" type="text" placeholder="€">';
+}?>
                 </div>
             </div>
 
@@ -56,11 +56,11 @@ require __DIR__ . '/mortgagevalidations.php';
                 <div class="twelve wide column">
                     <label for="dept">Schulden (als u geen schulden heeft vul hier dan 0 in)</label>
                     <?php if (isset($_GET['dept'])) {
-                        $dept = $_GET['dept'];
-                        echo '<input id="dept" name="dept" type="text" placeholder="€" value="'.$dept.'">';
-                    } else {
-                        echo '<input id="dept" name="dept" type="text" placeholder="€">';
-                    }?>
+    $dept = $_GET['dept'];
+    echo '<input id="dept" name="dept" type="text" placeholder="€" value="'.$dept.'">';
+} else {
+    echo '<input id="dept" name="dept" type="text" placeholder="€">';
+}?>
                 </div>
             </div>
 
@@ -68,11 +68,11 @@ require __DIR__ . '/mortgagevalidations.php';
                 <div class="twelve wide column">
                     <label for="purchase_price">Koopprijs</label>
                     <?php if (isset($_GET['purchase_price'])) {
-                        $purchase_price = $_GET['purchase_price'];
-                        echo '<input id="purchase_price" name="purchase_price" type="text" placeholder="€" value="'.$purchase_price.'">';
-                    } else {
-                        echo '<input id="purchase_price" name="purchase_price" type="text" placeholder="€">';
-                    }?>
+    $purchase_price = $_GET['purchase_price'];
+    echo '<input id="purchase_price" name="purchase_price" type="text" placeholder="€" value="'.$purchase_price.'">';
+} else {
+    echo '<input id="purchase_price" name="purchase_price" type="text" placeholder="€">';
+}?>
                 </div>
             </div>
 
@@ -80,11 +80,11 @@ require __DIR__ . '/mortgagevalidations.php';
                 <div class="twelve wide column">
                     <label for="email">E-mailadres</label>
                     <?php if (isset($_GET['email'])) {
-                        $email = $_GET['email'];
-                        echo '<input id="email" name="email" type="text" placeholder="Uw e-mailadres" value="'.$email.'">';
-                    } else {
-                        echo '<input id="email" name="email" type="text" placeholder="Uw e-mailadres">';
-                    }?>
+    $email = $_GET['email'];
+    echo '<input id="email" name="email" type="text" placeholder="Uw e-mailadres" value="'.$email.'">';
+} else {
+    echo '<input id="email" name="email" type="text" placeholder="Uw e-mailadres">';
+}?>
                 </div>
             </div>
 
@@ -92,21 +92,21 @@ require __DIR__ . '/mortgagevalidations.php';
                 <div class="twelve wide column">
                     <label for="mortgage_duration">Hypotheek looptijd</label>
                     <?php if (isset($_GET['mortgage_duration'])) {
-                        $mortgage_duration = $_GET['mortgage_duration'];
-                        echo '<select id="mortgage_duration" name="mortgage_duration" type="text" placeholder="Selecteer..." value="'.$mortgage_duration.'">
+    $mortgage_duration = $_GET['mortgage_duration'];
+    echo '<select id="mortgage_duration" name="mortgage_duration" type="text" placeholder="Selecteer..." value="'.$mortgage_duration.'">
                         <option value="5">5 jaar</option>
                         <option value="10">10 jaar</option>
                         <option value="15">15 jaar</option>
                         <option value="30">30 jaar</option>;
                         </select>';
-                    } else {
-                        echo '<select id="mortgage_duration" name="mortgage_duration" type="text" placeholder="Selecteer...">
+} else {
+    echo '<select id="mortgage_duration" name="mortgage_duration" type="text" placeholder="Selecteer...">
                         <option value="5">5 jaar</option>
                         <option value="10">10 jaar</option>
                         <option value="15">15 jaar</option>
                         <option value="30">30 jaar</option>
                         </select>';
-                    }?>
+}?>
                 </div>
             </div>
 
