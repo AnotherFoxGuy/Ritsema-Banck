@@ -20,11 +20,11 @@ require __DIR__ . '/contactvalidations.php';
                 <div class="twelve wide column">
                     <label for="name">Naam</label>
                     <?php if (isset($_GET['name'])) {
-                        $name = $_GET['name'];
-                        echo '<input id="name" name="name" type="text" placeholder="Uw naam" value="' . $name . '">';
-                    } else {
-                        echo '<input id="name" name="name" type="text" placeholder="Uw naam">';
-                    } ?>
+    $name = $_GET['name'];
+    echo '<input id="name" name="name" type="text" placeholder="Uw naam" value="' . $name . '">';
+} else {
+    echo '<input id="name" name="name" type="text" placeholder="Uw naam">';
+} ?>
                 </div>
             </div>
 
@@ -32,11 +32,11 @@ require __DIR__ . '/contactvalidations.php';
                 <div class="twelve wide column">
                     <label for="email">E-mailadres</label>
                     <?php if (isset($_GET['email'])) {
-                        $email = $_GET['email'];
-                        echo '<input id="email" name="email" type="text" placeholder="Uw email adres" value="' . $email . '">';
-                    } else {
-                        echo '<input id="email" name="email" type="text" placeholder="Uw email adres">';
-                    } ?>
+    $email = $_GET['email'];
+    echo '<input id="email" name="email" type="text" placeholder="Uw email adres" value="' . $email . '">';
+} else {
+    echo '<input id="email" name="email" type="text" placeholder="Uw email adres">';
+} ?>
                 </div>
             </div>
 
@@ -44,11 +44,11 @@ require __DIR__ . '/contactvalidations.php';
                 <div class="twelve wide column">
                     <label for="message">Bericht</label>
                     <?php if (isset($_GET['message'])) {
-                        $message = $_GET['message'];
-                        echo '<textarea id="message" name="message" type="text" placeholder="Typ hier uw bericht.." rows="5" cols="30">' . $message . '</textarea>';
-                    } else {
-                        echo '<textarea id="message" name="message" type="text" placeholder="Typ hier uw bericht.." rows="5" cols="30"></textarea>';
-                    } ?>
+    $message = $_GET['message'];
+    echo '<textarea id="message" name="message" type="text" placeholder="Typ hier uw bericht.." rows="5" cols="30">' . $message . '</textarea>';
+} else {
+    echo '<textarea id="message" name="message" type="text" placeholder="Typ hier uw bericht.." rows="5" cols="30"></textarea>';
+} ?>
                 </div>
             </div>
 
