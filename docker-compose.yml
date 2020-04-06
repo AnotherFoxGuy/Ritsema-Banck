@@ -1,23 +1,26 @@
 version: "3.1"
 services:
-  mariadb:
-    container_name: RB_mariadb
-    image: mariadb:latest
+
+  mysql:
+    container_name: RB_mysql
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
     environment:
       - MYSQL_ROOT_PASSWORD=admin
       - MYSQL_DATABASE=ritsema_banck
       - MYSQL_USER=admin
       - MYSQL_PASSWORD=admin
     volumes:
-      - ./tmp/mariadb:/var/lib/mysql
+      - ./tmp/mysql:/var/lib/mysql
     ports:
-      - "3306:3306"
+      - "3306:3306"   
 
   phpmyadmin:
     container_name: RB_phpmyadmin
     image: phpmyadmin/phpmyadmin
     environment:
-      - PMA_HOST=mariadb
+      - PMA_HOST=mysql
     ports:
       - "8181:80"
 
