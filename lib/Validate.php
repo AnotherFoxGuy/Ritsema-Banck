@@ -88,7 +88,7 @@ class Validate
     public function validate_code($code): bool
     {
         // selects the telephone number from the user
-        $database = new database();
+        $database = new Database();
         $rows = $database->select("SELECT tnumber FROM `user` WHERE tnumber = ?", array($code))->num_rows;
 
         // return true of false based on the given telephone number

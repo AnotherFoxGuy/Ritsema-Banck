@@ -19,6 +19,7 @@ class Database
         $conn = new ConnectDB();
         $this->connection = $conn->getConnection();
         if ($this->connection->connect_error) {
+            echo $this->connection->connect_error;
             return false;
         } else {
             return true;
@@ -46,7 +47,6 @@ class Database
         for ($i = 0; $i < count($values); $i++) {
             $args[] = &$values[$i];
         }
-
         // binds the values to the prepared query
         call_user_func_array(array($stmt, 'bind_param'), $args);
 
@@ -83,7 +83,7 @@ class Database
             call_user_func_array(array($stmt, 'bind_param'), $args);
             // executes the query and returns either true of false
             $result = $stmt->execute();
-            $database->disconnect();
+            $this->disconnect();
             if ($result) {
                 return true;
             } else {

@@ -35,8 +35,8 @@ require __DIR__ . '/../includes/navbar.php';
         <div class="row">
             <div class="twelve wide column">
                 <label for="name">Naam :</label>
-                <?php print_r($user->firstname);
-                ?>            </div>
+                <?php print_r($user->firstname); ?>
+            </div>
 
             <div class="twelve wide column">
                 <label for="name">Geslacht :</label>
@@ -100,8 +100,9 @@ require __DIR__ . '/../includes/navbar.php';
                     <label for="hypotheeken"> Hypotheken : </label>
                     <?php
                     $result = $database->select("SELECT * FROM `hypotheeken` WHERE user = ?", array($user->id));
-                    $note = $database->fetch($database->select("SELECT * FROM `messages` WHERE sender = ?", array($_SESSION["user"]->id)));
+                    $note = $database->fetch($database->select("SELECT * FROM `messages` WHERE sender = ?", array($user->id)));
                     $hypotheek = $database->fetch($result);
+
                     print($hypotheek['date'] . ' , Laatst bijgewerkt :' . $hypotheek['last_update'] . ' , Status : ' . $hypotheek['status'] . ' , Uw bericht : ' . $note['text']);
                     ?>
 
@@ -115,7 +116,7 @@ require __DIR__ . '/../includes/navbar.php';
             </div>
             <div class="row">
                 <?php
-                $mortgage_result = $database->fetch($database->select("SELECT * FROM HypotheekInfo WHERE Email = ?", array(Token::decode($cookie->get_value())->username)));
+                $mortgage_result = $database->fetch($database->select("SELECT * FROM hypotheekinfo WHERE Email = ?", array($user->email)));
                 if (!empty($mortgage_result)) {
                     echo
                     ' <div class="six wide column">

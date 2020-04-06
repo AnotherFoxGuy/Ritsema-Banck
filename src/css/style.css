@@ -29,9 +29,9 @@
       --error-light-red: #FFF6F6;
       --error-rose: #E2B4B4;
 }
-
+  
   /* variabelen uit :root kunnen aangeroepen worden door bijvoorbeeld te zeggen: background-color: var(--hs-red); */
-
+  
 * {
       box-sizing: border-box;
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -54,7 +54,7 @@ a {
 /* --------------------------------------------------------------
                               Rows & columns
 -------------------------------------------------------------- */
-
+  
 .row {
       padding-bottom: 20px;
 }
@@ -127,7 +127,7 @@ a {
                               Forms
 -------------------------------------------------------------- */
 
-input, textarea {
+input, textarea, select {
       width: 100%;
       padding: 12px 20px;
       margin: 8px 0;
@@ -202,13 +202,13 @@ input, textarea {
 .invisible {
       display: none;
 }
-
+    
 /* Safari */
 @-webkit-keyframes spin {
       0% { -webkit-transform: rotate(0deg); }
       100% { -webkit-transform: rotate(360deg); }
 }
-
+    
 @keyframes spin {
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
@@ -246,21 +246,21 @@ input, textarea {
 
 .popup {
       position: absolute;
-      left: 0;
-      right: 0;
-      margin: auto;
+      left: 0; 
+      right: 0; 
+      margin: auto; 
       top: 100px;
       opacity: 1;
       z-index: 10000;
       animation-duration: 0.5s;
-      animation-name: swipe_bottom;
+      animation-name: swipe_bottom;  
       transform: translateY(0px);
       opacity: 1;
 }
 
 .swipe_right {
       animation-duration: 0.5s;
-      animation-name: swipe_right;
+      animation-name: swipe_right;  
       transform: translateY(0px);
       opacity: 1;
 }
@@ -361,6 +361,10 @@ input, textarea {
       font-size:30px;
       cursor:pointer
 }
+
+button > a {
+      color: white;
+}
 /* END */
 
 .navbar-logo {
@@ -442,7 +446,7 @@ footer li {
 
 .bounce {
       animation-duration: 1s;
-      animation-name: bounce;
+      animation-name: bounce;  
       transform: translateY(0px);
       opacity: 1;
 }
