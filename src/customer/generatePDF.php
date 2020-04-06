@@ -18,9 +18,10 @@ define('EURO', chr(128));
 
 $user = RitsemaBanck\CheckLogin::getUser();
 
-$mortgage_result = $database->fetch($database->select("SELECT * FROM HypotheekInfo WHERE Email = ?", array(Token::decode($cookie->get_value())->username)));
+$database = new Database();
+$database->connect("localhost", "root", "", "ritsemabanck");
 
-$user = new User();
+$mortgage_result = $database->fetch($database->select("SELECT * FROM hypotheekinfo WHERE Email = ?", array($user->email)));
 
 if (!empty($mortgage_result)) {
     $user->birthdate = $mortgage_result["Geboortedatum"];
@@ -89,49 +90,49 @@ $pdf->Ln();
 $pdf->setFont("Arial", "B", 12);
 $pdf->write(5, "Rekeningnummer\n");
 $pdf->setFont("Arial", "", 12);
-$pdf->write(5, $_SESSION["user"]->bank_number . "\n");
+$pdf->write(5, $user->bank_number . "\n");
 
 $pdf->Ln();
 
 $pdf->setFont("Arial", "B", 12);
 $pdf->write(5, "Bruto jaarinkomen\n");
 $pdf->setFont("Arial", "", 12);
-$pdf->write(5, $_SESSION["user"]->gross_anual_income . "\n");
+$pdf->write(5, $user->gross_anual_income . "\n");
 
 $pdf->Ln();
 
 $pdf->setFont("Arial", "B", 12);
 $pdf->write(5, "Eigen inbreng\n");
 $pdf->setFont("Arial", "", 12);
-$pdf->write(5, EURO . " " . $_SESSION["user"]->input_money . "\n");
+$pdf->write(5, EURO . " " . $user->input_money . "\n");
 
 $pdf->Ln();
 
 $pdf->setFont("Arial", "B", 12);
 $pdf->write(5, "Schulden\n");
 $pdf->setFont("Arial", "", 12);
-$pdf->write(5, EURO . " " . $_SESSION["user"]->dept . "\n");
+$pdf->write(5, EURO . " " . $user->dept . "\n");
 
 $pdf->Ln();
 
 $pdf->setFont("Arial", "B", 12);
 $pdf->write(5, "Koopprijs\n");
 $pdf->setFont("Arial", "", 12);
-$pdf->write(5, EURO . " " . $_SESSION["user"]->purchase_price . "\n");
+$pdf->write(5, EURO . " " . $user->purchase_price . "\n");
 
 $pdf->Ln();
 
 $pdf->setFont("Arial", "B", 12);
 $pdf->write(5, "Hypotheek looptijd\n");
 $pdf->setFont("Arial", "", 12);
-$pdf->write(5, $_SESSION["user"]->mortgage_duration . "\n");
+$pdf->write(5, $user->mortgage_duration . "\n");
 
 $pdf->Ln();
 
 $pdf->setFont("Arial", "B", 12);
 $pdf->write(5, "Hypotheek\n");
 $pdf->setFont("Arial", "", 12);
-$pdf->write(5, EURO . " " . $_SESSION["user"]->mortgage);
+$pdf->write(5, EURO . " " . $user->mortgage);
 
 $pdf->Ln();
 
