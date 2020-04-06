@@ -39,6 +39,18 @@ class popup {
 
     container.appendChild(row);
 
+    if('description' in this.json){
+      var row = document.createElement("DIV");
+      row.classList.add("row");
+
+      var description = document.createElement("DIV");
+      description.innerHTML = this.json.description;
+      row.appendChild(description);
+
+      container.appendChild(row);
+    }
+
+    // checks if there are any inputs given. Creates input fields if that is the case
     if ("inputs" in this.json) {
       for (var i = 0; i < this.json.inputs.length; i++) {
         var row = document.createElement("DIV");
@@ -57,6 +69,7 @@ class popup {
       }
     }
 
+    // button generation
     var row = document.createElement("DIV");
     row.classList.add("row");
 
@@ -68,12 +81,24 @@ class popup {
     row.appendChild(button);
     container.appendChild(row);
 
+    // possible error generation
+    var row = document.createElement("DIV");
+    row.classList.add("row");
+
+    var errorMessage = document.createElement("DIV");
+    errorMessage.classList.add("error");
+    errorMessage.style.display = "none";
+    errorMessage.id = "div_input_error"
+    row.appendChild(errorMessage);
+    container.appendChild(row);
+
     wrapper.appendChild(container);
     popup.appendChild(wrapper);
     document.body.appendChild(overlay);
     document.body.appendChild(popup);
-
+    // generating properties which are available outside the class
     this.button = document.getElementById(this.json.button.id);
+    this.errorMessage = document.getElementById("div_input_error");
     if ("inputs" in this.json) {
       for (var i = 0; i < this.json.inputs.length; i++) {
         this.inputs.push(document.getElementById(this.json.inputs[i].id));
@@ -81,37 +106,13 @@ class popup {
     }
   }
 
-  action(action) {
-    switch (action) {
-      case "fade":
-        this.button.addEventListener("click", this.fade);
-        break;
-      case "close":
-        this.button.addEventListener("click", this.close);
-        break;
-      default:
-        alert("Default");
-        break;
-    }
-  }
-
-  update(title, description, button, subscription) {
-    this.titleText = title;
-    this.descriptionText = description;
-    this.buttonText = button;
-    this.subscriptionText = subscription;
-  }
-
-  swipe() {
-    this.cont.classList.add("swipe_right");
-    this.header.innerHTML = this.titleText;
-    this.description.innerHTML = this.descriptionText;
-    this.button.innerHTML = this.buttonText;
-    this.subscription.innerHTML = this.subscriptionText;
-  }
-
   close() {
     document.getElementById("wrapper").remove();
     document.getElementById("overlay").remove();
+  }
+
+  error(message){
+    this.errorMessage.style.display = "block";
+    this.errorMessage.innerHTML = message;
   }
 }

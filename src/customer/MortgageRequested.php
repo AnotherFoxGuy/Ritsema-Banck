@@ -1,6 +1,6 @@
 <?php
 require __DIR__ . '/../includes/navbar.php';
-require __DIR__ . '/mortgagevalidations.php';
+require __DIR__ . '/MortgageValidations.php';
 ?>
 
 

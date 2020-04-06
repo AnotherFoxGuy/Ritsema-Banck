@@ -22,11 +22,11 @@ class Validate
     public function filter_characters($string): bool
     {
         // a patterns which checks if the entire string contains only lowercase- and uppercase characters, numbers between 0 and 9, and some other characters
-        $pattern = "'^[a-zA-Z0-9.|_|-]{1,}$'";
+        $pattern = "'^[a-zA-Z0-9._@^\\..\[\]]{1,}$'";
         if (preg_match($pattern, $string)) {
             return true;
         } else {
-            array_push($this->errors, "Je invoer mag geen special tekens bevatten");
+            array_push($this->errors, "Je invoer mag geen speciale tekens bevatten");
             return false;
         }
     }

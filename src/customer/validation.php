@@ -14,11 +14,15 @@ if ((isset($_POST["email"])) && (isset($_POST["password"]))) {
     if ($validation->filter_length($email)) {
         if ($validation->filter_length($password)) {
             if ($validation->filter_characters($password)) {
-                if ($validation->validate_email($email)) {
-                    if ($validation->validate_user($email, $password)) {
-                        $cookie = new Cookie("token");
-                        $cookie->create(Token::encode($email, time(), 0));
-                        print("true");
+                if ($validation->filter_characters($email)) {
+                    if ($validation->validate_email($email)) {
+                        if ($validation->validate_user($email, $password)) {
+                            $cookie = new Cookie("token");
+                            $cookie->create(Token::encode($email, time(), 0));
+                            print("true");
+                        } else {
+                            print($validation->get_errors()[0]);
+                        }
                     } else {
                         print($validation->get_errors()[0]);
                     }
@@ -51,15 +55,15 @@ if (isset($_POST["code"])) {
                     $cookie->create($decoded);
                     print("true");
                 } else {
-                    print_r($validation->get_errors());
+                    print_r(json_encode($validation->get_errors()));
                 }
             } else {
-                print_r($validation->get_errors());
+                print_r(json_encode($validation->get_errors()));
             }
         } else {
-            print_r($validation->get_errors());
+            print_r(json_encode($validation->get_errors()));
         }
     } else {
-        print_r($validation->get_errors());
+        print_r(json_encode($validation->get_errors()));
     }
 }

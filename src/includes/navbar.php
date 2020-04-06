@@ -35,7 +35,7 @@ RitsemaBanck\CheckLogin::validate();
                 <a href="/">Home</a>
                 <a href="/QA.php">Veelgestelde vragen</a>
                 <a href="/contact.php">Contact</a>
-                <?php echo ($_SESSION["logged_in"] == false) ? '<a href="/customer">Inloggen</a>' : '<a href="/customer/overview.php">Overzicht</a>'; ?>
+                <?php echo ($_SESSION["logged_in"] == false) ? '<a href="/customer/login.php">Inloggen</a>' : '<a href="/customer">Overzicht</a>'; ?>
             </div>
         </div>
 
@@ -44,7 +44,7 @@ RitsemaBanck\CheckLogin::validate();
                 <li><a href="/">Home</a></li>
                 <li><a href="/QA.php">Veelgestelde vragen</a></li>
                 <li><a href="/contact.php">Contact</a></li>
-                <li><?php echo ($_SESSION["logged_in"] == false) ? '<a href="/customer">Inloggen</a>' : '<a href="/customer/overview.php">Overzicht</a>'; ?></li>
+                <li><?php echo ($_SESSION["logged_in"] == false) ? '<a href="/customer/login.php">Inloggen</a>' : '<a href="/customer">Overzicht</a>'; ?></li>
                 <?php echo ($_SESSION["logged_in"] == true) ? '<li><a href="/customer/logout.php">Uitloggen</a></li>' : ''; ?>
             </ul>
         </div>

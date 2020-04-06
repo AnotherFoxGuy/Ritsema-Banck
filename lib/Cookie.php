@@ -25,9 +25,9 @@ class Cookie
         setcookie("token", Token::encode($value->username, $value->timestamp, $value->verified), time() + 86400, "/");
     }
 
-    public function delete()
+    public function remove(): void
     {
-        setcookie($this->value, "", time() - 3600, "/");
+        setcookie($this->name, "", time() - 3600, "/");
     }
 
     // returns the name of the cookie

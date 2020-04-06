@@ -11,7 +11,7 @@ session_start();
 require __DIR__ . '/../../vendor/autoload.php';
 
 if (!RitsemaBanck\CheckLogin::validate()) {
-    header("Location: /customer");
+    header("Location: /customer/login.php");
 }
 
 $user = RitsemaBanck\CheckLogin::getUser();

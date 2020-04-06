@@ -21,7 +21,7 @@ class EmailValidation
         if (!filter_var($Email, FILTER_VALIDATE_EMAIL)) {
             return false;
         } else {
-            return true;
+            return $this->setEmail(@$Email);
         }
     }
 }

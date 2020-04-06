@@ -1,6 +1,6 @@
 <?php
 require __DIR__ . '/../includes/navbar.php';
-require __DIR__ . '/mortgagevalidations.php';
+require __DIR__ . '/MortgageValidations.php';
 
 if (!RitsemaBanck\CheckLogin::validate()) {
     header("Location: /customer");
@@ -21,7 +21,7 @@ $user = RitsemaBanck\CheckLogin::getUser();
 
 <div class="five wide white rounded container">
     <div class="ten wide container">
-        <form method="post" action="<?php echo htmlspecialchars("/customer/mortgagevalidations.php");?>">
+        <form method="post" action="<?php echo htmlspecialchars("/customer/MortgageValidations.php");?>">
 
             <div class="row">
                 <div class="twelve wide column">

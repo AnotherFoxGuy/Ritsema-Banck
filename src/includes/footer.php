@@ -6,10 +6,10 @@
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="/QA.php">Veelgestelde vragen</a></li>
-                    <li><a href="/customer">Inloggen</a></li>
+                    <li><a href="/customer/login.php">Inloggen</a></li>
                     <li><a href="/contact.php">Contact</a></li>
                     <li><a href="/about.php">Over ons</a></li>
-                    <li><a href="/customer/overview.php">Overzicht</a></li>
+                    <li><a href="/customer">Overzicht</a></li>
                     <li><a href="https://intranet.ritsema-banck.frl/">intranet</a></li>
                 </ul>
             </div>
