@@ -1,5 +1,7 @@
 <?php
+require __DIR__ . '/../../vendor/autoload.php';
 
+use RitsemaBanck\ConnectDB;
 use RitsemaBanck\Database;
 
 function ExtendedAddslash(&$params)
@@ -20,6 +22,8 @@ if (isset($_POST['submit'])) {
     $purchase_price = $_POST['purchase_price'];
     $email = $_POST['email'];
     $mortgage_duration = $_POST['mortgage_duration'];
+
+    $user = RitsemaBanck\CheckLogin::getUser();
 
 
     //calculationvariables
@@ -53,20 +57,19 @@ if (isset($_POST['submit'])) {
         header("Location: /customer/MortgageRequest.php?mortgagerequest=bank_number_length&birthdate=$birthdate&gross_anual_income=$gross_anual_income&input_money=$input_money&dept=$dept&purchase_price=$purchase_price&email=$email&mortgage_duration=$mortgage_duration&bank_number=$bank_number");
         exit();
     } else {
-        $database = new Database();
-        $database->connect("localhost", "root", "", "ritsemabanck");
+        $conn = new ConnectDB();
+        $connection = $conn->getConnection();
 
-        $stmt = $database->get_connection()->prepare("INSERT INTO `HypotheekInfo` (`Geboortedatum`, `Rekeningnummer`, `Bruto jaarinkomen`, `Eigen inbreng`, `Schulden`, `Koopprijs`, `Email`, `Hypotheek looptijd`, `Hypotheek`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt = $connection->prepare("INSERT INTO `hypotheekinfo` (`Geboortedatum`, `Rekeningnummer`, `Bruto jaarinkomen`, `Eigen inbreng`, `Schulden`, `Koopprijs`, `Email`, `Hypotheek looptijd`, `Hypotheek`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
         $stmt->bind_param("ssiiiisii", $birthdate, $bank_number, $gross_anual_income, $input_money, $dept, $purchase_price, $email, $mortgage_duration, $mortgage);
 
         $id = 1;
         $read = 0;
-        $sender = $_SESSION["user"]->id;
+        $sender = $user->id;
 
         $stmt->execute();
 
         $stmt->close();
-        $database->disconnect();
 
         $bank_mail = "ritsemabanck@gmail.com"; // this is your Email address
         $subject = "Hypotheek aanvraag";
@@ -75,7 +78,7 @@ if (isset($_POST['submit'])) {
         mail($bank_mail, $subject, $message, $headers);
         mail($email, "Kopie hypotheekaanvraag", $message, "From: " . $bank_mail);
 
-        header("Location: ../jmh/index.php?submitted_form=mortgage_request&mortgage=$mortgage");
+        header("Location: /customer/received.php?submitted_form=mortgage_request&mortgage=$mortgage");
         exit();
     }
 }

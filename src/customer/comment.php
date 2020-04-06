@@ -1,5 +1,6 @@
 <?php
 
+use RitsemaBanck\ConnectDB;
 use RitsemaBanck\Database;
 
 require __DIR__ . '/../includes/navbar.php';
@@ -8,6 +9,7 @@ require __DIR__ . '/../../vendor/autoload.php';
 if (!RitsemaBanck\CheckLogin::validate()) {
     header("Location: /customer/login.php");
 }
+$user = RitsemaBanck\CheckLogin::getUser();
 
 //voorkomt SQL injection naar database
 function ExtendedAddslash(&$params)
@@ -23,25 +25,23 @@ function ExtendedAddslash(&$params)
 if (isset($_POST["message"])) {
     $message = $_POST["message"];
 
-    $database = new Database();
-    $database->connect("localhost", "root", "", "Ritsemabanck");
 
     $id = 1;
     $date = date("Y-m-d");
     $text = $message;
     $read = 0;
-    $sender = $_SESSION["user"]->id;
+    $sender = $user->id;
 
+    $conn = new ConnectDB();
+    $connection = $conn->getConnection();
 
-    $stmt = $database->get_connection()->prepare("INSERT INTO `messages` (`id`, `date`, `text`, `read`, `sender`) VALUES (?, ?, ?, ?, ?)");
-    $stmt->bind_param("sssss", $id, $date, $text, $read, $sender);
+    $stmt = $connection->prepare("INSERT INTO `messages` (`date`, `text`, `read`, `sender`) VALUES (?, ?, ?, ?)");
+    $stmt->bind_param("ssss", $date, $text, $read, $sender);
 
 
     $stmt->execute();
 
     $stmt->close();
-    $database->disconnect();
-
     ?>
     <div class="twelve wide container">
         <div class="ten wide container">
