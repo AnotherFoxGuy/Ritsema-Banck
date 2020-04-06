@@ -7,7 +7,7 @@ use mysqli;
 
 class ConnectDB
 {
-    private $servername = "mariadb";
+    private $servername = "mysql";
     private $username = "admin";
     private $password = "admin";
     private $database = "ritsema_banck";

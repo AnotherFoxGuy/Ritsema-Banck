@@ -1,8 +1,10 @@
 <?php
+
 namespace RitsemaBanck;
 
 class Validate
 {
+
     private $errors = array();
 
     // returns either true of false based on a regular expression
@@ -22,12 +24,12 @@ class Validate
     public function filter_characters($string): bool
     {
         // a patterns which checks if the entire string contains only lowercase- and uppercase characters, numbers between 0 and 9, and some other characters
-        $pattern = "'^[a-zA-Z0-9._@^\\..\[\]]{1,}$'";
+        $pattern = "'^[<>\'\"]{1,}$'";
         if (preg_match($pattern, $string)) {
-            return true;
-        } else {
             array_push($this->errors, "Je invoer mag geen speciale tekens bevatten");
             return false;
+        } else {
+            return true;
         }
     }
 
@@ -67,7 +69,7 @@ class Validate
                 // fetches the hash from the database
                 $hash = $database->fetch($result)["password"];
                 // verifies that the password is equal to the decyphered hash
-                if (password_verify("test", $hash)) {
+                if (password_verify($password, $hash)) {
                     return true;
                 } else {
                     array_push($this->errors, "De combinatie tussen je gebruikersnaam en je wachtwoord is niet juist");
@@ -86,7 +88,7 @@ class Validate
     public function validate_code($code): bool
     {
         // selects the telephone number from the user
-        $database = new Database();
+        $database = new database();
         $rows = $database->select("SELECT tnumber FROM `user` WHERE tnumber = ?", array($code))->num_rows;
 
         // return true of false based on the given telephone number
@@ -98,9 +100,22 @@ class Validate
         }
     }
 
+    public function does_user_exist_in_database($email): bool
+    {
+        $database = new Database();
+        $result = $database->select("SELECT * FROM user WHERE email = ?", array($email));
+        if (!$database->empty($result)) {
+            return true;
+        } else {
+            array_push($this->errors, "Er bestaat geen gebruiker met het opgegeven e-mailadres");
+            return false;
+        }
+    }
+
     // returns the errors as an array
     public function get_errors(): array
     {
         return $this->errors;
     }
+
 }

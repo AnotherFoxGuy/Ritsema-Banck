@@ -13,6 +13,13 @@
                     <li><a href="https://intranet.ritsema-banck.frl/">intranet</a></li>
                 </ul>
             </div>
+            <div class="three wide column">
+                <h4>Hypotheken</h4>
+                <ul>
+                    <li><a href="/customer/MortgageRequest.php">Hypotheek aanvragen</a></li>
+                    <li><a href="/customer/MortgageCalculator.php">Calculator</a></li>
+                </ul>
+            </div>
         </div>
     </div>
 </footer>

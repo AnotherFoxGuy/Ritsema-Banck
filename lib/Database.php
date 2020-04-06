@@ -94,6 +94,76 @@ class Database
         }
     }
 
+    public function insert($query, $values): bool
+    {
+        $cookie = new Cookie("token");
+        if ($cookie->validate_user($cookie->get_value())) { // validates that the token stored in the cookie is verified
+            $this->connect("localhost", "root", "", "ritsemabanck");
+            // prepares the query
+            $stmt = $this->get_connection()->prepare($query);
+
+            $type = "";
+            for ($i = 0; $i < count($values); $i++) {
+                $type = $type . substr(gettype($values[$i]), 0, 1);
+            }
+
+            // appends the values to the array
+            $args = array(&$type);
+            for ($i = 0; $i < count($values); $i++) {
+                $args[] = &$values[$i];
+            }
+
+            // binds the parameters to the prepared query
+            call_user_func_array(array($stmt, 'bind_param'), $args);
+
+            $result = $stmt->execute();
+
+            $this->disconnect();
+            if ($result) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+
+    public function delete($query, $values): bool
+    {
+        $cookie = new Cookie("token");
+        if ($cookie->validate_user($cookie->get_value())) { // validates that the token stored in the cookie is verified
+            $this->connect("localhost", "root", "", "ritsemabanck");
+            // prepares the query
+            $stmt = $this->get_connection()->prepare($query);
+
+            $type = "";
+            for ($i = 0; $i < count($values); $i++) {
+                $type = $type . substr(gettype($values[$i]), 0, 1);
+            }
+
+            // appends the values to the array
+            $args = array(&$type);
+            for ($i = 0; $i < count($values); $i++) {
+                $args[] = &$values[$i];
+            }
+
+            // binds the parameters to the prepared query
+            call_user_func_array(array($stmt, 'bind_param'), $args);
+
+            $result = $stmt->execute();
+
+            $this->disconnect();
+            if ($result) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+
     public function fetch($result)
     {
         return $result->fetch_assoc();

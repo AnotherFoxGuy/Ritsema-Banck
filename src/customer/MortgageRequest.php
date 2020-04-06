@@ -2,12 +2,6 @@
 require __DIR__ . '/../includes/navbar.php';
 require __DIR__ . '/MortgageValidations.php';
 
-if (!RitsemaBanck\CheckLogin::validate()) {
-    header("Location: /customer");
-}
-
-$user = RitsemaBanck\CheckLogin::getUser();
-
 ?>
 
 
@@ -21,17 +15,29 @@ $user = RitsemaBanck\CheckLogin::getUser();
 
 <div class="five wide white rounded container">
     <div class="ten wide container">
-        <form method="post" action="<?php echo htmlspecialchars("/customer/MortgageValidations.php");?>">
+        <form method="post" action="<?php echo htmlspecialchars("/customer/MortgageValidations.php"); ?>">
 
             <div class="row">
                 <div class="twelve wide column">
                     <label for="name">Geboortedatum</label>
                     <?php if (isset($_GET['birthdate'])) {
-    $birthdate = $_GET['birthdate'];
-    echo '<input id="birthdate" name="birthdate" type="text" placeholder="dd/mm/jjjj" value="'.$birthdate.'">';
-} else {
+                        $birthdate = $_GET['birthdate'];
+                        echo '<input id="birthdate" name="birthdate" type="text" placeholder="dd/mm/jjjj" value="' . $birthdate . '">';
+                    } else {
                         echo '<input id="birthdate" name="birthdate" type="text" placeholder="dd/mm/jjjj">';
-                    }?>
+                    } ?>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="twelve wide column">
+                    <label for="bank_number">Rekeningnummer</label>
+                    <?php if (isset($_GET['bank_number'])) {
+                        $bank_number = $_GET['bank_number'];
+                        echo '<input id="bank_number" name="bank_number" type="text" placeholder="Uw rekeningnummer" value="' . $bank_number . '">';
+                    } else {
+                        echo '<input id="bank_number" name="bank_number" type="text" placeholder="Uw rekeningnummer">';
+                    } ?>
                 </div>
             </div>
 
@@ -40,10 +46,10 @@ $user = RitsemaBanck\CheckLogin::getUser();
                     <label for="gross_anual_income">Bruto jaarinkomen</label>
                     <?php if (isset($_GET['gross_anual_income'])) {
                         $gross_anual_income = $_GET['gross_anual_income'];
-                        echo '<input id="gross_anual_income" name="gross_anual_income" type="text" placeholder="€" value="'.$gross_anual_income.'">';
+                        echo '<input id="gross_anual_income" name="gross_anual_income" type="text" placeholder="€" value="' . $gross_anual_income . '">';
                     } else {
                         echo '<input id="gross_anual_income" name="gross_anual_income" type="text" placeholder="€">';
-                    }?>
+                    } ?>
                 </div>
             </div>
 
@@ -52,10 +58,10 @@ $user = RitsemaBanck\CheckLogin::getUser();
                     <label for="input_money">Eigen inbreng (als u geen eigen inbreng heeft vul hier dan 0 in)</label>
                     <?php if (isset($_GET['input_money'])) {
                         $input_money = $_GET['input_money'];
-                        echo '<input id="input_money" name="input_money" type="text" placeholder="€" value="'.$input_money.'">';
+                        echo '<input id="input_money" name="input_money" type="text" placeholder="€" value="' . $input_money . '">';
                     } else {
                         echo '<input id="input_money" name="input_money" type="text" placeholder="€">';
-                    }?>
+                    } ?>
                 </div>
             </div>
 
@@ -64,10 +70,10 @@ $user = RitsemaBanck\CheckLogin::getUser();
                     <label for="dept">Schulden (als u geen schulden heeft vul hier dan 0 in)</label>
                     <?php if (isset($_GET['dept'])) {
                         $dept = $_GET['dept'];
-                        echo '<input id="dept" name="dept" type="text" placeholder="€" value="'.$dept.'">';
+                        echo '<input id="dept" name="dept" type="text" placeholder="€" value="' . $dept . '">';
                     } else {
                         echo '<input id="dept" name="dept" type="text" placeholder="€">';
-                    }?>
+                    } ?>
                 </div>
             </div>
 
@@ -76,10 +82,10 @@ $user = RitsemaBanck\CheckLogin::getUser();
                     <label for="purchase_price">Koopprijs</label>
                     <?php if (isset($_GET['purchase_price'])) {
                         $purchase_price = $_GET['purchase_price'];
-                        echo '<input id="purchase_price" name="purchase_price" type="text" placeholder="€" value="'.$purchase_price.'">';
+                        echo '<input id="purchase_price" name="purchase_price" type="text" placeholder="€" value="' . $purchase_price . '">';
                     } else {
                         echo '<input id="purchase_price" name="purchase_price" type="text" placeholder="€">';
-                    }?>
+                    } ?>
                 </div>
             </div>
 
@@ -88,10 +94,10 @@ $user = RitsemaBanck\CheckLogin::getUser();
                     <label for="email">E-mailadres</label>
                     <?php if (isset($_GET['email'])) {
                         $email = $_GET['email'];
-                        echo '<input id="email" name="email" type="text" placeholder="Uw e-mailadres" value="'.$email.'">';
+                        echo '<input id="email" name="email" type="text" placeholder="Uw e-mailadres" value="' . $email . '">';
                     } else {
                         echo '<input id="email" name="email" type="text" placeholder="Uw e-mailadres">';
-                    }?>
+                    } ?>
                 </div>
             </div>
 
@@ -100,7 +106,7 @@ $user = RitsemaBanck\CheckLogin::getUser();
                     <label for="mortgage_duration">Hypotheek looptijd</label>
                     <?php if (isset($_GET['mortgage_duration'])) {
                         $mortgage_duration = $_GET['mortgage_duration'];
-                        echo '<select id="mortgage_duration" name="mortgage_duration" type="text" placeholder="Selecteer..." value="'.$mortgage_duration.'">
+                        echo '<select id="mortgage_duration" name="mortgage_duration" type="text" placeholder="Selecteer..." value="' . $mortgage_duration . '">
                         <option value="5">5 jaar</option>
                         <option value="10">10 jaar</option>
                         <option value="15">15 jaar</option>
@@ -113,14 +119,16 @@ $user = RitsemaBanck\CheckLogin::getUser();
                         <option value="15">15 jaar</option>
                         <option value="30">30 jaar</option>
                         </select>';
-                    }?>
+                    } ?>
                 </div>
             </div>
 
 
             <div class="row">
                 <div class="twelve wide column">
-                    <button id="submit" type="submit" name="submit" value="submit" class="twelve wide blue button">Bereken</button>
+                    <button id="submit" type="submit" name="submit" value="submit" class="twelve wide blue button">
+                        Bereken
+                    </button>
                 </div>
             </div>
         </form>
@@ -145,6 +153,9 @@ $user = RitsemaBanck\CheckLogin::getUser();
             } elseif ($mortgageCheck == 'number') {
                 echo
                     $errorboxStart . "Voer een bedrag in afgerond op hele euro's" . $errorboxEnd;
+            } elseif ($mortgageCheck == "bank_number_length") {
+                echo
+                    $errorboxStart . "Uw rekeningnummer is niet juist ingevoerd." . $errorboxEnd;
             }
         }
         ?>
