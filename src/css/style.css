@@ -169,7 +169,6 @@ input, textarea, select {
 }
 
 .inverted {
-      background-color: #FFFFFF;
       color: var(--hs-light-gray);
 }
 

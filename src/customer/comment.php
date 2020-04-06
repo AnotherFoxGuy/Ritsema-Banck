@@ -48,7 +48,7 @@ if (isset($_POST["message"])) {
             <div class="padded row">
                 <div class="twelve wide column">
                     <h1>Gelukt!</h1>
-                    <span>Je bericht is succesvol in de database geplaatst! Ga terug naar het overzicht om meer te doen.</span>
+                    <span>Je bericht is succesvol verstuurd! Ga terug naar het overzicht.</span>
                 </div>
             </div>
             <div class="row">
